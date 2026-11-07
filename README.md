@@ -15,13 +15,31 @@
   - GCW 战役名中文覆盖文件
   - Assault 模式单人任务副本（移除 Red Alert 标记以便在任务列表显示）
 
-## 安装
+## 安装方法
 
-1. 将本仓库的 `contents` 目录放到 FotG 的 SideMod 目录中（或作为 Knossos 的独立 mod 安装）。
-2. 确保 `mod.json` 的 `parent` 指向 `FotG`。
-3. 通过 Knossos 启动「FotG简体中文包」，不要直接启动本体。
+### Windows 版
 
-字体文件因授权与体积原因未包含；如缺少中文字体，请从游戏本体或系统字体补充 `data/fonts`。
+1. 解压后，将 `FotG_Chinese_1.0.0` 文件夹放到 `\FotG_Win.1\kn_portable\Library\FotG_R` 中。
+
+   ![步骤1](docs/images/step1.png)
+
+2. 运行 `Knossos.NET.exe`，然后点击 **Advanced**。
+
+   ![步骤2](docs/images/step2.png)
+
+3. 下滑到最下方，点击 **+ 号** 添加 mod。
+
+   ![步骤3](docs/images/step3.png)
+
+4. 选择 **FotG_简体中文包**。
+
+   ![步骤4](docs/images/step4.png)
+
+5. 点击 **↑**，将 mod 依赖程度提到最高。
+
+   ![步骤5](docs/images/step5.png)
+
+6. 最后启动游戏即可生效。
 
 ## 术语
 
@@ -31,3 +49,4 @@
 
 - 内部 `$Name` 保持英文，仅覆盖显示名，避免任务/脚本引用失效。
 - 文本已适配 FSO 26.2.0 的 token 长度限制（技术标题 31 字节、帮助文本 128 字节）。
+- 字体文件已包含在本包内。
