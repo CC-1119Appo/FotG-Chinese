@@ -1,0 +1,57 @@
+{
+  "mod_source": "nebula",
+  "installed": true,
+  "id": "FotG_简体中文包",
+  "title": "FotG_简体中文包",
+  "type": "mod",
+  "parent": "FotG",
+  "version": "1.0.1",
+  "private": true,
+  "stability": null,
+  "description": "",
+  "notes": "",
+  "logo": null,
+  "tile": null,
+  "banner": null,
+  "release_thread": null,
+  "videos": [],
+  "screenshots": null,
+  "attachments": [],
+  "first_release": null,
+  "last_update": null,
+  "cmdline": "",
+  "mod_flag": [
+    "FotG_SideMod",
+    "FotG"
+  ],
+  "dev_mode": true,
+  "custom_build": null,
+  "owners": null,
+  "packages": [
+    {
+      "name": "contents",
+      "notes": "",
+      "status": "required",
+      "dependencies": [
+        {
+          "id": "FotG",
+          "version": "999.0.0-DevEnv",
+          "packages": []
+        },
+        {
+          "id": "FSO",
+          "version": ">=25.0.0",
+          "packages": []
+        }
+      ],
+      "environment": null,
+      "folder": "contents",
+      "is_vp": false,
+      "files": [],
+      "filelist": [],
+      "executables": [],
+      "check_notes": null,
+      "isEnabled": true
+    }
+  ]
+}
