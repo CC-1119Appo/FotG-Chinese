@@ -1,0 +1,2952 @@
+#Mission Info
+
+$Version: 24.1
+$Name:  XSTR("[Rebel] The Asteroid Field", -1)
+$Author: TopAce, RBSkald
+$Created: 04/10/10 at 16:48:12
+$Modified: 09/16/26 at 23:47:58
+$Notes:
+$End Notes:
+
+$Mission Desc:
+ XSTR("Asteroid field mission.  Don't play this mission if our asteroids don't work.", -1)
+$end_multi_text
++Game Type Flags: 1
++Flags: 131072
+
++Disallow Support: 0
++Hull Repair Ceiling: 0.000000
++Subsystem Repair Ceiling: 100.000000
+
++Viewer pos: 151.605362, 321.633698, -2980.212402
++Viewer orient:
+	0.998242, -0.000002, 0.059277,
+	-0.003079, 0.998648, 0.051886,
+	-0.059197, -0.051977, 0.996892
+
+$Starting wing names: ( "Red" "Blue" "Green" )
+$Squadron wing names: ( "Red" "Blue" "Green" "Gold" "Epsilon" )
+$Team-versus-team wing names: ( "Red" "Zeta" )
+
+$Skybox Model: skybox_asteroids_browngrey.pof
+$Skybox Model Animations:( "Hyperspace_Asteroids_East" "Hyperspace_Asteroids_South" "Hyperspace_Asteroids_West" )
++Skybox Orientation:
+	-0.615662, 0.000000, 0.788011,
+	0.000000, 1.000000, -0.000000,
+	-0.788011, -0.000000, -0.615662
+
+$AI Profile: FOTG_AI
+
+$Sound Environment: Default
+
+#Sexp_variables
+
+$Variables:
+(
+		0		"BonusShip"		"0"		"number"
+		1		"R2LambdaPriority"		"51"		"number"
+		2		"R3LambdaPriority"		"51"		"number"
+		3		"rand-encounter"		"0"		"number"
+)
+
+#Command Briefing
+
+#Briefing
+$start_briefing
+$num_stages: 4
+$start_stage
+$multi_text
+ XSTR("This is the $f CRV $f Observer$|, one of our reconnaissance ships in this region of the Galaxy.  She was scheduled to return from the $b Mozzurat $b System after assisting a $y nonaligned $y Weequay underground movement against the Empire.
+
+We have received news that the $f Observer has dropped out of hyperspace due to an uncharted asteroid field ahead of it.", -1)
+$end_multi_text
+$voice: none.wav
+$camera_pos: -61.933403, 4210.603516, 343.508148
+$camera_orient:
+	1.000000, 0.000000, -0.000000,
+	0.000000, 0.000000, 1.000000,
+	0.000000, -1.000000, 0.000000
+$camera_time: 2000
+$num_lines: 0
+$num_icons: 3
+$Flags: 0
+$Formula: ( true ) 
+$start_icon
+$type: 18
+$team: Friendly
+$class: CR90 Corvette#Reb
+$pos: -395.360443, -300.000000, -91.011139
+$label:  XSTR("Observer", -1)
++id: 1
+$hlight: 1
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: 257.384338, 275.299988, 417.352722
++id: 2
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: -534.760986, 275.299988, 608.054382
++id: 3
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$end_stage
+$start_stage
+$multi_text
+ XSTR("Imperial forces are in pursuit, so there is no time for the $f Observer to circumvent the asteroid field.", -1)
+$end_multi_text
+$voice: none.wav
+$camera_pos: -61.933403, 4210.603516, 129.275375
+$camera_orient:
+	1.000000, 0.000000, -0.000000,
+	0.000000, 0.000000, 1.000000,
+	0.000000, -1.000000, 0.000000
+$camera_time: 2000
+$num_lines: 0
+$num_icons: 4
+$Flags: 0
+$Formula: ( true ) 
+$start_icon
+$type: 18
+$team: Friendly
+$class: CR90 Corvette#Reb
+$pos: -395.360443, -300.000000, -91.011139
+$label:  XSTR("Observer", -1)
++id: 1
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: 257.384338, 275.299988, 417.352722
++id: 2
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: -534.760986, 275.299988, 608.054382
++id: 3
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 18
+$team: Hostile
+$class: Arquitens Lgt Cruiser#I
+$pos: 455.420685, 275.299988, -393.799011
++id: 4
+$hlight: 1
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$end_stage
+$start_stage
+$multi_text
+ XSTR("Red Squadron will be deployed to defend the corvette.  Your mission is to make sure she returns to base intact.  Destroy any asteroid that is on a collision course with the $f Observer$|.  As soon as she enters hyperspace, head home.", -1)
+$end_multi_text
+$voice: none.wav
+$camera_pos: -191.485260, 3130.169189, 196.329208
+$camera_orient:
+	1.000000, 0.000000, -0.000000,
+	0.000000, 0.000000, 1.000000,
+	0.000000, -1.000000, 0.000000
+$camera_time: 2000
+$num_lines: 0
+$num_icons: 4
+$Flags: 0
+$Formula: ( true ) 
+$start_icon
+$type: 18
+$team: Friendly
+$class: CR90 Corvette#Reb
+$pos: -395.360443, -300.000000, -91.011139
+$label:  XSTR("Observer", -1)
++id: 1
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: 257.384338, 275.299988, 417.352722
++id: 2
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: -534.760986, 275.299988, 608.054382
++id: 3
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 1
+$team: Friendly
+$class: T-65c X-wing#Red
+$pos: -668.260925, 275.300049, 200.188889
+$label:  XSTR("Red (3)", -1)
++id: 5
+$hlight: 0
+$mirror: 0
+$use wing icon: 1
+$multi_text
+$end_multi_text
+$end_icon
+$end_stage
+$start_stage
+$multi_text
+ XSTR("Your astromech droid is capable of pinpointing asteroids on collision course with the corvette.  These asteroids are marked with a white bracket on your HUD.", -1)
+$end_multi_text
+$voice: none.wav
+$camera_pos: -191.485260, 3130.169189, 196.329208
+$camera_orient:
+	1.000000, 0.000000, -0.000000,
+	0.000000, 0.000000, 1.000000,
+	0.000000, -1.000000, 0.000000
+$camera_time: 2000
+$num_lines: 0
+$num_icons: 4
+$Flags: 0
+$Formula: ( true ) 
+$start_icon
+$type: 18
+$team: Friendly
+$class: CR90 Corvette#Reb
+$pos: -395.360443, -300.000000, -91.011139
+$label:  XSTR("Observer", -1)
++id: 1
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: 257.384338, 275.299988, 417.352722
++id: 2
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 8
+$team: Unknown
+$class: T-65c X-wing#Red
+$pos: -534.760986, 275.299988, 608.054382
++id: 3
+$hlight: 0
+$mirror: 0
+$multi_text
+$end_multi_text
+$end_icon
+$start_icon
+$type: 1
+$team: Friendly
+$class: T-65c X-wing#Red
+$pos: -668.260925, 275.300049, 200.188889
+$label:  XSTR("Red (3)", -1)
++id: 5
+$hlight: 0
+$mirror: 0
+$use wing icon: 1
+$multi_text
+$end_multi_text
+$end_icon
+$end_stage
+$end_briefing
+
+#Debriefing_info
+
+$Num stages: 4
+
+$Formula: ( is-goal-true-delay 
+   "Escort Observer" 
+   0 
+)
+$Multi text
+    XSTR("The Observer has provided us with little valuable information.  The Weequay resistance force aborted their mission and withdrew when the ISD Dominator entered the Mozzurat System.  Excellent job getting her through the field, nonetheless.  Every ship we save increases our fighting ability and inspires our loyal supporters to greater extents.
+
+For an endeavor such as the Rebel Alliance to succeed, we must value every single person or starship that is available to us.  For now, small victories such as today will suffice.", -1)
+$end_multi_text
+$Voice: none.wav
+$Recommendation text:
+    XSTR("", -1)
+$end_multi_text
+
+$Formula: ( and 
+   ( is-destroyed-delay 0 "Observer" ) 
+   ( not 
+      ( is-disabled-delay 0 "Observer" ) 
+   )
+)
+$Multi text
+    XSTR("Your failure to defend the Observer will cost us dearly.  Though the Weequay resistance force aborted their mission and withdrew when the ISD Dominator entered the Mozzurat System, there would have been other opportunities to assist them had the Observer not perished in the asteroid field.  Every ship we save increases our fighting ability and inspires our loyal supporters to greater extents.
+
+For an endeavor such as the Rebel Alliance to succeed, we must value every single person or starship that is available to us.", -1)
+$end_multi_text
+$Voice: none.wav
+$Recommendation text:
+    XSTR("Sweep the asteroid field in front of the corvette.  Don't rely on white brackets entirely.  Divert power from shields to guns to make sure you can maintain your rate of fire.  A quad blast at an asteroid is usually enough.", -1)
+$end_multi_text
+
+$Formula: ( and 
+   ( is-destroyed-delay 0 "Observer" ) 
+   ( has-arrived-delay 0 "Imperator" ) 
+)
+$Multi text
+    XSTR("Your failure to defend the Observer will cost us dearly.  Though the Weequay resistance force aborted their mission and withdrew when the ISD Dominator entered the Mozzurat System, there would have been other opportunities to assist them had the Observer not perished in the asteroid field.  Every ship we save increases our fighting ability and inspires our loyal supporters to greater extents.
+
+For an endeavor such as the Rebel Alliance to succeed, we must value every single person or starship available to us.  The Observer's captain ordered you to withdraw to save your lives--there was nothing else you could have done to protect the corvette from the Imperial light cruisers, but a more skillful escort would have prevented the corvette's engines from getting knocked out.", -1)
+$end_multi_text
+$Voice: none.wav
+$Recommendation text:
+    XSTR("The Arquitens Cruisers arrive only if the corvette is disabled.
+
+Sweep the asteroid field in front of the corvette.  Don't rely on white brackets entirely.  Divert power from shields to guns to make sure you can maintain your rate of fire.  A quad blast at an asteroid is usually enough.", -1)
+$end_multi_text
+
+$Formula: ( is-event-false-delay 
+   "Conditions to depart" 
+   0 
+)
+$Multi text
+    XSTR("You have left the asteroid field before you were ordered to do so.
+
+The Rebellion needs not only soldiers, but loyal, obedient soldiers.  Every act of disobedience costs us dearly.", -1)
+$end_multi_text
+$Voice: none.wav
+$Recommendation text:
+    XSTR("Sweep the asteroid field in front of the corvette.  Don't rely on white brackets entirely.  Divert power from shields to guns to make sure you can maintain your rate of fire.  A quad blast at an asteroid is usually enough.", -1)
+$end_multi_text
+
+#Players		;! 1 total
+
+$Starting Shipname: Red 1
+$Ship Choices: (
+	"BTL-A4 Y-wing"	3
+	"Z-95 Headhunter#Red"	3
+)
+
++Weaponry Pool: (
+	"T&B KX-9"	19
+	"ArMek SW-4"	2
+	"ArMek SW-7a"	2
+	"Krupx MG5#Orn"	8
+	"Krupx MG7-A#Pnk"	28
+	"S-1 Seismic Charge"	10
+)
+
+#Objects		;! 31 total
+
+$Name: Red 1		;! Object #0
+$Class: T-65c X-wing#Red
+$Team: Friendly
+$Location: 298.032349, -99.498657, -1823.321777
+$Orientation:
+	0.865923, -0.000001, 0.500178,
+	-0.048942, 0.995201, 0.084731,
+	-0.497778, -0.097850, 0.861767
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 100
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "cargo-known" "player-start" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( "attack ship" "guard ship" "ignore ship" "form on wing" "cover me" "attack any" )
++Group: 0
++Use Table Score:
++Score: 10
+
+$Name: Red 2		;! Object #1
+$Class: T-65c X-wing#Red
+$Team: Friendly
+$Location: 367.732361, -24.198715, -1753.221802
+$Orientation:
+	0.841209, 0.000000, 0.540709,
+	-0.073353, 0.990755, 0.114119,
+	-0.535711, -0.135661, 0.833433
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 100
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "invulnerable" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( "attack ship" "guard ship" "ignore ship" "form on wing" "cover me" "attack any" )
++Group: 0
++Use Table Score:
++Score: 10
++Persona Name: Rebel Pilot 4
+
+$Name: Red 3		;! Object #2
+$Class: T-65c X-wing#Red
+$Team: Friendly
+$Location: 428.632446, 25.801270, -1691.221802
+$Orientation:
+	0.817456, 0.000001, 0.575990,
+	-0.092780, 0.986942, 0.131674,
+	-0.568469, -0.161078, 0.806782
++AI Class: AI_06_Lieutenant
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 100
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "invulnerable" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( "attack ship" "guard ship" "ignore ship" "form on wing" "cover me" "attack any" )
++Group: 0
++Use Table Score:
++Score: 10
++Persona Name: Rebel Pilot 3
+
+$Name: Observer		;! Object #3
+$Class: CR90 Corvette#Reb
+$Team: Friendly
+$Location: -402.200012, -300.000000, -248.399994
+$Orientation:
+	0.997195, -0.000000, -0.074848,
+	-0.004537, 0.998161, -0.060451,
+	0.074710, 0.060621, 0.995361
+$AI Goals: ( goals ( ai-waypoints-once "JumpOut" 55 ) )
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
++Subsystem: Turret01
++Subsystem: Turret02
++Subsystem: Turret03
++Subsystem: Turret04
++Subsystem: Turret05
++Subsystem: Turret06
+$Arrival Location: Hyperspace
+$Arrival Cue: ( true ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( are-waypoints-done-delay 
+   "Observer" 
+   "JumpOut" 
+   0 
+)
+$Determination: 10
++Flags: ( "cargo-known" "escort" )
++Flags2: ( "lock-all-turrets" "force-shields-on" "no-ets" )
++Respawn priority: 0
++Escort priority: 100
++Special Hitpoints: 30000
++Special Shield Points: 8400
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 100
+
+$Name: Alpha 1		;! Object #4
+$Class: T.I.E. Fighter
+$Team: Hostile
+$Location: 786.100403, 0.000000, 5605.813965
+$Orientation:
+	0.036461, 0.053901, 0.997881,
+	-0.019892, 0.998386, -0.053201,
+	-0.999137, -0.017910, 0.037474
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 8
+
+$Name: Alpha 2		;! Object #5
+$Class: T.I.E. Fighter
+$Team: Hostile
+$Location: 690.562317, 1.340607, 5566.181152
+$Orientation:
+	0.044717, 0.054874, 0.997491,
+	-0.020699, 0.998327, -0.053992,
+	-0.998785, -0.018233, 0.045778
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 8
+
+$Name: Alpha 3		;! Object #6
+$Class: T.I.E. Fighter
+$Team: Hostile
+$Location: 576.604431, 3.577904, 5530.430176
+$Orientation:
+	0.052691, 0.056085, 0.997035,
+	-0.021598, 0.998252, -0.055012,
+	-0.998377, -0.018635, 0.053810
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 8
+
+$Name: Imperator 1		;! Object #7
+$Class: Arquitens Lgt Cruiser#I
+$Team: Hostile
+$Location: 810.906128, -2090.020264, 13778.254883
+$Orientation:
+	-0.848100, 0.000000, 0.529836,
+	0.000000, 1.000000, 0.000000,
+	-0.529836, 0.000000, -0.848100
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
++Subsystem: Turret01_A
++Subsystem: Turret02_A
++Subsystem: Turret03_A
++Subsystem: Turret04_A
++Subsystem: Turret05_A
++Subsystem: Turret06_A
++Subsystem: Turret07_A
++Subsystem: Turret08_A
++Subsystem: Turret09_A
++Subsystem: Turret10_A
++Subsystem: Turret11_A
++Subsystem: Turret12_A
++Subsystem: Turret13_A
++Subsystem: Turret14_A
++Subsystem: Turret15_A
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "escort" )
++Flags2: ( "no-ets" )
++Respawn priority: 0
++Escort priority: 50
++Orders Accepted List: ( )
++Group: 0
++Score: 400
+
+$Name: Imperator 2		;! Object #8
+$Class: Arquitens Lgt Cruiser#I
+$Team: Hostile
+$Location: 205.923019, -2090.020264, 13977.356445
+$Orientation:
+	-0.848100, 0.000000, 0.529836,
+	0.000000, 1.000000, 0.000000,
+	-0.529836, 0.000000, -0.848100
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
++Subsystem: Turret01_A
++Subsystem: Turret02_A
++Subsystem: Turret03_A
++Subsystem: Turret04_A
++Subsystem: Turret05_A
++Subsystem: Turret06_A
++Subsystem: Turret07_A
++Subsystem: Turret08_A
++Subsystem: Turret09_A
++Subsystem: Turret10_A
++Subsystem: Turret11_A
++Subsystem: Turret12_A
++Subsystem: Turret13_A
++Subsystem: Turret14_A
++Subsystem: Turret15_A
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "escort" )
++Flags2: ( "no-ets" )
++Respawn priority: 0
++Escort priority: 50
++Orders Accepted List: ( )
++Group: 0
++Score: 400
+
+$Name: Gold 1		;! Object #9
+$Class: BTL-A4 Y-wing#Gold
+$Team: Friendly
+$Location: 514.074829, 0.000000, -922.205261
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_05_Officer
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 100
++Subsystem: Pilot
++Subsystem: BombTurret
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( "attack ship" "guard ship" "ignore ship" "form on wing" "cover me" "attack any" )
++Group: 0
++Use Table Score:
++Score: 10
++Persona Name: Rebel Pilot 1
+
+$Name: Gold 2		;! Object #10
+$Class: BTL-A4 Y-wing#Gold
+$Team: Friendly
+$Location: 636.425171, 0.000000, -991.593201
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_05_Officer
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 100
++Subsystem: Pilot
++Subsystem: BombTurret
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( "attack ship" "guard ship" "ignore ship" "form on wing" "cover me" "attack any" )
++Group: 0
++Use Table Score:
++Score: 10
++Persona Name: Imperial Pilot 4
+
+$Name: Sensor Satellite		;! Object #11
+$Class: Sensor Satellite#Reb
+$Team: Hostile
+$Location: -2734.300049, 665.922668, 11777.200195
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
+$Cargo 1:  XSTR("Data Logs", -1)
++Initial Velocity: 33
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( = @BonusShip[0] 1 ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "protect-ship" "no-arrival-music" "no-arrival-warp" "invulnerable" "scannable" "stealth" )
++Flags2: ( "no-ets" )
++Respawn priority: 0
++Group: 0
++Score: 50
+
+$Name: Longevity		;! Object #12
+$Class: Corellian Star Shuttle
+$Team: Unknown
+$Location: -2395.356689, 700.000000, 10944.427734
+$Orientation:
+	-0.724198, -0.598806, -0.342006,
+	0.615292, -0.337162, -0.712557,
+	0.311372, -0.726466, 0.612613
++AI Class: AI_06_Lieutenant
+$AI Goals: ( goals ( ai-play-dead 50 ) )
+$Cargo 1:  XSTR("Heavy Ordnance", -1)
++Initial Hull: 24
++Subsystem: Pilot
++Subsystem: Communications
+$Damage: 1000
+$Arrival Location: Hyperspace
+$Arrival Cue: ( = @BonusShip[0] 2 ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "protect-ship" "no-arrival-music" "no-arrival-warp" "invulnerable" "scannable" "stealth" )
++Flags2: ( "no-ets" )
++Respawn priority: 0
+$Special Explosion:
++Special Exp Damage: 300
++Special Exp Blast: 3000
++Special Exp Inner Radius: 150
++Special Exp Outer Radius: 450
++Special Exp Death Roll Time: 3500
++Orders Accepted List: ( )
++Group: 0
++Score: 50
+
+$Name: Beta 1		;! Object #13
+$Class: TIE/In Interceptor
+$Team: Hostile
+$Location: -2671.137695, -0.001160, 6718.503906
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_06_Lieutenant
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 8
+
+$Name: Beta 2		;! Object #14
+$Class: TIE/In Interceptor
+$Team: Hostile
+$Location: -2749.837402, -0.001221, 6707.429199
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_06_Lieutenant
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 8
+
+$Name: Beta 3		;! Object #15
+$Class: TIE/In Interceptor
+$Team: Hostile
+$Location: -2723.827393, -0.001160, 6658.235840
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_06_Lieutenant
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 8
+
+$Name: Beta 4		;! Object #16
+$Class: TIE/In Interceptor
+$Team: Hostile
+$Location: -2659.286133, -0.001038, 6723.458496
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
++AI Class: AI_06_Lieutenant
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 8
+
+$Name: Gamma 1		;! Object #17
+$Class: TIE/sa Bomber
+$Team: Hostile
+$Location: -504.707855, 749.999268, 7323.090820
+$Orientation:
+	-0.504846, 0.000000, -0.863210,
+	0.000000, 1.000000, 0.000000,
+	0.863210, 0.000000, -0.504846
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
++Secondary Banks: ( "Krupx MG7-A#Blu" "S-1 Seismic Charge" )
++Sbank Ammo: ( 38 100 )
++Subsystem: BombTurret
++Sbank Ammo: ( 75 )
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 9
+
+$Name: Gamma 2		;! Object #18
+$Class: TIE/sa Bomber
+$Team: Hostile
+$Location: -514.294922, 749.999268, 7359.541016
+$Orientation:
+	-0.504846, 0.000000, -0.863209,
+	0.000000, 1.000000, 0.000000,
+	0.863209, 0.000000, -0.504846
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
++Secondary Banks: ( "Krupx MG7-A#Blu" "S-1 Seismic Charge" )
++Sbank Ammo: ( 38 100 )
++Subsystem: BombTurret
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 9
+
+$Name: Gamma 3		;! Object #19
+$Class: TIE/sa Bomber
+$Team: Hostile
+$Location: -550.361328, 749.999207, 7308.117188
+$Orientation:
+	-0.504846, 0.000000, -0.863209,
+	0.000000, 1.000000, 0.000000,
+	0.863209, 0.000000, -0.504846
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
++Secondary Banks: ( "Krupx MG7-A#Blu" "S-1 Seismic Charge" )
++Sbank Ammo: ( 38 100 )
++Subsystem: BombTurret
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 9
+
+$Name: Gamma 4		;! Object #20
+$Class: TIE/sa Bomber
+$Team: Hostile
+$Location: -571.346191, 749.999268, 7272.232422
+$Orientation:
+	-0.504846, 0.000000, -0.863209,
+	0.000000, 1.000000, 0.000000,
+	0.863209, 0.000000, -0.504846
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
++Secondary Banks: ( "Krupx MG7-A#Blu" "S-1 Seismic Charge" )
++Sbank Ammo: ( 38 100 )
++Subsystem: BombTurret
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 9
+
+$Name: Tau 1		;! Object #21
+$Class: XG-1 Star Wing
+$Team: Hostile
+$Location: 421.083618, -378.157013, 7302.824219
+$Orientation:
+	-0.099041, 0.000000, 0.995083,
+	0.000000, 1.000000, 0.000000,
+	-0.995083, 0.000000, -0.099041
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-shields" "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Group: 0
++Score: 9
+
+$Name: Tau 2		;! Object #22
+$Class: XG-1 Star Wing
+$Team: Hostile
+$Location: 378.047119, -378.157837, 7327.471680
+$Orientation:
+	-0.099041, 0.000000, 0.995083,
+	0.000000, 1.000000, 0.000000,
+	-0.995083, 0.000000, -0.099041
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-shields" "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Group: 0
++Score: 9
+
+$Name: Tau 3		;! Object #23
+$Class: XG-1 Star Wing
+$Team: Hostile
+$Location: 402.785339, -378.157837, 7376.969727
+$Orientation:
+	-0.099041, 0.000000, 0.995083,
+	0.000000, 1.000000, 0.000000,
+	-0.995083, 0.000000, -0.099041
++AI Class: AI_S_Survivalist
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-shields" "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Group: 0
++Score: 9
+
+$Name: Fortune 1		;! Object #24
+$Class: ZTI-wing
+$Team: Hostile
+$Team Color Setting: None
+$Location: 101.552780, 85.086609, 8613.775391
+$Orientation:
+	-0.666276, 0.000000, 0.745706,
+	0.000000, 1.000000, 0.000000,
+	-0.745706, 0.000000, -0.666276
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 8
+
+$Name: Fortune 2		;! Object #25
+$Class: ZTI-wing
+$Team: Hostile
+$Team Color Setting: None
+$Location: 99.462006, 85.086609, 8662.491211
+$Orientation:
+	-0.666276, 0.000000, 0.745705,
+	0.000000, 1.000000, 0.000000,
+	-0.745705, 0.000000, -0.666276
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 8
+
+$Name: Fortune 3		;! Object #26
+$Class: T-Blade Bomber
+$Team: Hostile
+$Team Color Setting: None
+$Location: 157.161041, 85.086609, 8628.766602
+$Orientation:
+	-0.666276, 0.000000, 0.745705,
+	0.000000, 1.000000, 0.000000,
+	-0.745705, 0.000000, -0.666276
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 7
+
+$Name: Pillager 1		;! Object #27
+$Class: Skipray Blastboat
+$Team: Hostile
+$Team Color Setting: None
+$Location: -331.198853, -148.731812, 8656.791992
+$Orientation:
+	-0.999767, 0.000000, -0.021591,
+	0.000000, 1.000000, 0.000000,
+	0.021591, 0.000000, -0.999767
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
++Primary Banks: ( "T&B KT6#Orn" "Borstel NK-3" )
++Secondary Banks: ( "Arakyd ST2#Orn" "S-1 Seismic Charge" )
++Subsystem: Turret01A
++Primary Banks: ( "CEC AG-2G" )
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Score: 7
+
+$Name: Pillager 2		;! Object #28
+$Class: Cloakshape Fighter#Yellow
+$Team: Hostile
+$Location: -367.283142, -148.731873, 8680.009766
+$Orientation:
+	-0.999767, 0.000000, -0.021591,
+	0.000000, 1.000000, 0.000000,
+	0.021591, 0.000000, -0.999767
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 7
+
+$Name: Pillager 3		;! Object #29
+$Class: Cloakshape Fighter#Yellow
+$Team: Hostile
+$Location: -308.979767, -148.731873, 8684.230469
+$Orientation:
+	-0.999767, 0.000000, -0.021591,
+	0.000000, 1.000000, 0.000000,
+	0.021591, 0.000000, -0.999767
++AI Class: AI_08_Major
+$Cargo 1:  XSTR("Nothing", -1)
++Initial Velocity: 33
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( false ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "no-arrival-warp" "hidden-from-sensors" )
++Flags2: ( )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 7
+
+$Name: Hyperspace Preload_Ship		;! Object #30
+$Class: T-65c X-wing#Red
+$Team: Civilian
+$Location: 0.000000, 15000.000000, 0.000000
+$Orientation:
+	1.000000, 0.000000, 0.000000,
+	0.000000, 1.000000, 0.000000,
+	0.000000, 0.000000, 1.000000
+$Cargo 1:  XSTR("Nothing", -1)
++Subsystem: Pilot
+$Arrival Location: Hyperspace
+$Arrival Cue: ( true ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Determination: 10
++Flags: ( "ignore-count" "no-arrival-music" "no-arrival-warp" "invulnerable" "stealth" )
++Flags2: ( "no_collide" )
++Respawn priority: 0
++Orders Accepted List: ( )
++Group: 0
++Use Table Score:
++Score: 10
+
+#Wings		;! 9 total
+
+$Name: Red
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Red 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( true ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 3 total
+	"Red 1"
+	"Red 2"
+	"Red 3"
+)
+$AI Goals: ( goals ( ai-guard "Observer" 50 ) )
++Hotkey: 0
++Flags: ( )
+
+$Name: Alpha
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Alpha 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 1 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 3 total
+	"Alpha 1"
+	"Alpha 2"
+	"Alpha 3"
+)
+$AI Goals: ( goals ( ai-chase-any 50 ) )
++Hotkey: 2
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+$Name: Imperator
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Imperator 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( is-disabled-delay 33 "Observer" ) 
+$Departure Location: Hyperspace
+$Departure Cue: ( destroyed-or-departed-delay 
+   6 
+   "Observer" 
+)
+$Ships: (		;! 2 total
+	"Imperator 1"
+	"Imperator 2"
+)
+$AI Goals: ( goals ( ai-chase "Observer" 50 ) )
++Hotkey: 4
++Flags: ( "no-arrival-message" )
+
+$Name: Gold
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Gold 1
+$Arrival Location: Near Ship
++Arrival Distance: 3000
+$Arrival Anchor: Red 1
+$Arrival Cue: ( and 
+   ( not 
+      ( skill-level-at-least "Medium" ) 
+   )
+   ( is-event-incomplete 
+      "Conditions to depart" 
+   )
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 2 total
+	"Gold 1"
+	"Gold 2"
+)
+$AI Goals: ( goals ( ai-guard "Observer" 50 ) )
++Hotkey: 0
++Flags: ( "reinforcement" )
+
+$Name: Beta
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Beta 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 2 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 4 total
+	"Beta 1"
+	"Beta 2"
+	"Beta 3"
+	"Beta 4"
+)
+$AI Goals: ( goals ( ai-chase-any 55 ) ( ai-disable-ship-tactical "Observer" 50 ) )
++Hotkey: 2
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+$Name: Gamma
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Gamma 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 3 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 4 total
+	"Gamma 1"
+	"Gamma 2"
+	"Gamma 3"
+	"Gamma 4"
+)
+$AI Goals: ( goals ( ai-chase "Observer" 55 ) ( ai-chase-any 50 ) )
++Hotkey: 3
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+$Name: Tau
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Tau 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 4 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 3 total
+	"Tau 1"
+	"Tau 2"
+	"Tau 3"
+)
+$AI Goals: ( goals ( ai-disable-ship-tactical "Observer" 55 ) ( ai-chase-any 50 ) )
++Hotkey: 3
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+$Name: Fortune
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Fortune 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 5 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 3 total
+	"Fortune 1"
+	"Fortune 2"
+	"Fortune 3"
+)
+$AI Goals: ( goals ( ai-chase-any 50 ) )
++Hotkey: 2
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+$Name: Pillager
+$Waves: 1
+$Wave Threshold: 0
+$Special Ship: 0		;! Pillager 1
+$Arrival Location: Hyperspace
+$Arrival Cue: ( and 
+   ( = @rand-encounter[0] 6 ) 
+   ( has-time-elapsed ( rand 120 180 ) ) 
+)
+$Departure Location: Hyperspace
+$Departure Cue: ( false ) 
+$Ships: (		;! 3 total
+	"Pillager 1"
+	"Pillager 2"
+	"Pillager 3"
+)
+$AI Goals: ( goals ( ai-chase "Observer" 55 ) ( ai-chase-any 50 ) )
++Hotkey: 2
++Flags: ( "no-arrival-music" "no-arrival-message" "no-arrival-warp" )
+
+#Events		;! 71 total
+
+$Formula: ( when 
+   ( has-departed-delay 0 "Observer" ) 
+   ( do-nothing ) 
+)
++Name: Escort directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Defend Observer", -1)
++Team: 0
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Alpha" ) 
+   ( do-nothing ) 
+)
++Name: Lambda directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Alpha", -1)
++Team: 0
+
+$Formula: ( when 
+   ( or 
+      ( destroyed-or-departed-delay 
+         0 
+         "Observer" 
+      )
+      ( has-arrived-delay 4 "Imperator" ) 
+   )
+   ( set-player-warp-status ( true ) ) 
+)
++Name: Conditions to depart
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( has-departed-delay 0 "Red 1" ) 
+   ( do-nothing ) 
+)
++Name: Depart
++Repeat Count: 1
++Interval: 1
++Chained: 0
++Objective:  XSTR("Enter Hyperspace", -1)
++Team: 0
+
+$Formula: ( when 
+   ( has-time-elapsed 2 ) 
+   ( send-message-list 
+      "#Red 1" 
+      "Low" 
+      "R1 - Field" 
+      200 
+   )
+   ( ship-subsys-guardian-threshold 
+      100 
+      "Observer" 
+      "Communications" 
+   )
+)
++Name: Start dialog
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( has-time-elapsed 27 ) 
+   ( turret-free-all "Observer" ) 
+)
++Name: CRV turret-free
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( or 
+      ( has-arrived-delay 0 "Alpha" ) 
+      ( has-arrived-delay 0 "Beta" ) 
+   )
+   ( send-message-list 
+      "Observer" 
+      "Low" 
+      "CRV - Lambda" 
+      800 
+   )
+)
++Name: TFs here
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( is-disabled-delay 1 "Observer" ) 
+   ( send-message-list 
+      "Observer" 
+      "Normal" 
+      "CRV - Disabled" 
+      200 
+   )
+)
++Name: CRV disabled
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( not 
+      ( is-destroyed-delay 0 "Observer" ) 
+   )
+   ( send-message 
+      "#Red 1" 
+      "Low" 
+      "R1 - Rescue?" 
+   )
+)
++Name: CRV disabled 2
++Repeat Count: 1
++Interval: 1
++Chained: 6
++Team: 0
+
+$Formula: ( when 
+   ( not 
+      ( is-destroyed-delay 0 "Observer" ) 
+   )
+   ( send-message 
+      "Observer" 
+      "Low" 
+      "CRV - Not responding" 
+   )
+)
++Name: CRV disabled 3
++Repeat Count: 1
++Interval: 1
++Chained: 12
++Team: 0
+
+$Formula: ( when 
+   ( not 
+      ( is-destroyed-delay 0 "Observer" ) 
+   )
+   ( send-message 
+      "Observer" 
+      "Low" 
+      "CRV - Empire here" 
+   )
+)
++Name: CRV disabled 4
++Repeat Count: 1
++Interval: 1
++Chained: 9
++Team: 0
+
+$Formula: ( when 
+   ( and 
+      ( has-arrived-delay 2 "Imperator" ) 
+      ( not 
+         ( is-destroyed-delay 0 "Observer" ) 
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "High" 
+      "CRV - Carracks here" 
+   )
+)
++Name: Carracks here
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( and 
+      ( is-destroyed-delay 0 "Observer" ) 
+      ( not 
+         ( has-arrived-delay 0 "Imperator" ) 
+      )
+   )
+   ( if-then-else 
+      ( destroyed-or-departed-delay 
+         0 
+         "Red 2" 
+         "Red 3" 
+      )
+      ( training-msg 
+         "R1 - CRV down, not disabled" 
+      )
+      ( send-message 
+         "<any wingman>" 
+         "Normal" 
+         "Any - Corvette X" 
+      )
+   )
+)
++Name: CRV X
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( true ) 
+   ( set-subsystem-special-hitpoints 
+      40 
+      "Observer" 
+      "Engines" 
+   )
+)
++Name: CRV engine weakspot
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( < ( hits-left "Observer" ) 46 ) 
+      ( not 
+         ( has-arrived-delay 0 "Imperator" ) 
+      )
+   )
+   ( change-ai-class 
+      "AI_06_Lieutenant" 
+      "Observer" 
+      "Turret01" 
+      "Turret02" 
+   )
+   ( send-message 
+      "Observer" 
+      "Normal" 
+      "CRV - Debilitated" 
+   )
+)
++Name: CRV debilitating stress
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Alpha 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Alpha" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Alpha" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Lambda orders
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( true ) 
+   ( modify-variable 
+      @R2LambdaPriority[51] 
+      ( rand 30 70 ) 
+   )
+   ( modify-variable 
+      @R3LambdaPriority[51] 
+      ( rand 30 70 ) 
+   )
+   ( modify-variable 
+      @BonusShip[0] 
+      ( rand 1 2 ) 
+   )
+   ( cap-waypoint-speed "Observer" 45 ) 
+   ( modify-variable 
+      @rand-encounter[0] 
+      ( rand 1 6 ) 
+   )
+   ( set-player-warp-status ( false ) ) 
+)
++Name: Start
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( < 
+      ( distance "Red 1" "Sensor Satellite" ) 
+      2000 
+   )
+   ( ship-unstealthy "Sensor Satellite" ) 
+   ( ship-vulnerable "Sensor Satellite" ) 
+)
++Name: Sensor sat on sensor
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( is-destroyed-delay 
+      0 
+      "Sensor Satellite" 
+   )
+   ( do-nothing ) 
+)
++Name: Destroy sensor
++Repeat Count: 1
++Interval: 1
++Chained: 2
++Objective:  XSTR("Destroy Imperial Sat", -1)
++Team: 0
+
+$Formula: ( when 
+   ( < 
+      ( distance "Red 1" "Longevity" ) 
+      1400 
+   )
+   ( ship-unstealthy "Longevity" ) 
+   ( ship-vulnerable "Longevity" ) 
+)
++Name: Longevity on sensor
++Repeat Count: 1
++Interval: 1
++Team: 0
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Longevity" ) 
+   ( do-nothing ) 
+)
++Name: Destroy Longevity
++Repeat Count: 1
++Interval: 1
++Chained: 2
++Objective:  XSTR("Destroy Longevity", -1)
++Team: 0
+
+$Formula: ( when 
+   ( or 
+      ( < ( shields-left "Observer" ) 90 ) 
+      ( != ( hits-left "Observer" ) 100 ) 
+   )
+   ( send-message 
+      "Observer" 
+      "Normal" 
+      "CRV - Hit" 
+   )
+)
++Name: Corvette hit
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( < ( shields-left "Observer" ) 50 ) 
+      ( not 
+         ( is-event-true-delay 
+            "CRV disabled" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "Normal" 
+      "CRV - Shields failing" 
+   )
+)
++Name: Shields falling
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( < ( shields-left "Observer" ) 20 ) 
+      ( not 
+         ( is-event-true-delay 
+            "CRV disabled" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "Normal" 
+      "CRV - All shields X" 
+   )
+)
++Name: Shields failed
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Red 2" ) 
+   ( send-message 
+      "Red 3" 
+      "Low" 
+      "R3 - R2 down" 
+   )
+)
++Name: Red 2 X
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Red 3" ) 
+   ( send-message 
+      "Red 2" 
+      "Low" 
+      "R2 - R3 down" 
+   )
+)
++Name: Red 3 X
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "JumpOut:1" ) 
+      800 
+   )
+   ( if-then-else 
+      ( > ( hits-left "Observer" ) 28 ) 
+      ( send-message 
+         "Observer" 
+         "Normal" 
+         "CRV - Almost there" 
+      )
+      ( send-message 
+         "Observer" 
+         "Normal" 
+         "CRV - Almost there (damaged)" 
+      )
+   )
+)
++Name: CRV almost there
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( < 
+         ( distance "Observer" "JumpOut:1" ) 
+         6000 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "CRV disabled" 
+            0 
+         )
+      )
+   )
+   ( if-then-else 
+      ( > ( hits-left "Observer" ) 89 ) 
+      ( send-message 
+         "Observer" 
+         "Normal" 
+         "CRV - Report exc" 
+      )
+      ( if-then-else 
+         ( and 
+            ( < ( hits-left "Observer" ) 89 ) 
+            ( > ( hits-left "Observer" ) 70 ) 
+         )
+         ( send-message 
+            "Observer" 
+            "High" 
+            "CRV - Report good" 
+         )
+         ( if-then-else 
+            ( and 
+               ( < ( hits-left "Observer" ) 70 ) 
+               ( > ( hits-left "Observer" ) 40 ) 
+            )
+            ( send-message 
+               "Observer" 
+               "High" 
+               "CRV - Report med" 
+            )
+            ( send-message 
+               "Observer" 
+               "High" 
+               "CRV - Report bad" 
+            )
+         )
+      )
+   )
+)
++Name: CRV status report
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( false ) 
+   ( set-cutscene-bars ) 
+   ( set-camera-position -417 -374 -500 ) 
+   ( set-object-facing-object 
+      "Observer" 
+      "JumpOut:1" 
+   )
+   ( player-use-ai ) 
+   ( lock-secondary-weapon "Red 1" ) 
+   ( lock-primary-weapon "Red 1" ) 
+   ( disable-ets "Red 1" ) 
+)
++Name: Start cutscene
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( true ) 
+   ( unset-cutscene-bars ) 
+   ( reset-camera ) 
+   ( player-not-use-ai ) 
+   ( unlock-secondary-weapon "Red 1" ) 
+   ( unlock-primary-weapon "Red 1" ) 
+   ( enable-ets "Red 1" ) 
+)
++Name: end-cutscene
++Repeat Count: 1
++Interval: 1
++Chained: 3
+
+$Formula: ( when 
+   ( are-waypoints-done-delay 
+      "Observer" 
+      "JumpOut" 
+      0 
+   )
+   ( send-message 
+      "Observer" 
+      "High" 
+      "CRV - Jumping" 
+   )
+   ( ship-invulnerable "Observer" ) 
+)
++Name: CRV waypoints okay
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( has-time-elapsed 90 ) 
+      ( > 
+         ( distance "Observer" "Red 1" ) 
+         ( rand 3000 4000 ) 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "CRV disabled" 
+            0 
+         )
+      )
+      ( not 
+         ( is-event-true-delay 
+            "CRV waypoints okay" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "<any wingman>" 
+      "Normal" 
+      "Any - Where are you?" 
+   )
+)
++Name: Player wandering away
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog" 
+         8 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "Low" 
+      "CRV - Guns" 
+   )
+)
++Name: Start dialog 2
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 2" 
+         7 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 3" 
+      "Low" 
+      "R3 - Help us" 
+   )
+)
++Name: Start dialog 3
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 3" 
+         10 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "Low" 
+      "CRV - Guns 2" 
+   )
+)
++Name: Start dialog 4
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 4" 
+         10 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 2" 
+      "Low" 
+      "R2 - Lets" 
+   )
+)
++Name: Start dialog 5
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 5" 
+         7 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 3" 
+      "Low" 
+      "R3 - Stay close" 
+   )
+)
++Name: Start dialog 6
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 6" 
+         7 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Observer" 
+      "Low" 
+      "CRV - Firing arc" 
+   )
+)
++Name: Start dialog 7
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 7" 
+         9 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 2" 
+      "Low" 
+      "R2 - Weapon energy" 
+   )
+)
++Name: Start dialog 8
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 8" 
+         6 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 3" 
+      "Low" 
+      "R3 - Bad idea" 
+   )
+)
++Name: Start dialog 9
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Start dialog 9" 
+         7 
+      )
+      ( not 
+         ( is-event-true-delay 
+            "Conditions to depart" 
+            0 
+         )
+      )
+   )
+   ( send-message 
+      "Red 2" 
+      "Low" 
+      "R2 - Presumption" 
+   )
+)
++Name: Start dialog 10
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Escort directive" 
+         2 
+      )
+      ( = ( num-ships-in-battle "Red 2" ) 1 ) 
+   )
+   ( send-message 
+      "Red 2" 
+      "Normal" 
+      "R2 - We made it" 
+   )
+)
++Name: Red 2 - We made it
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Red 2 - We made it" 
+         6 
+      )
+      ( = ( num-ships-in-battle "Red 3" ) 1 ) 
+      ( = ( num-ships-in-battle "Red 2" ) 1 ) 
+   )
+   ( send-message 
+      "Red 3" 
+      "Normal" 
+      "R3 - Good job (pl)" 
+   )
+)
++Name: Red 3 - Good flying pl
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "Escort directive" 
+         6 
+      )
+      ( = ( num-ships-in-battle "Red 3" ) 1 ) 
+      ( is-destroyed-delay 0 "Red 2" ) 
+   )
+   ( send-message 
+      "Red 3" 
+      "Normal" 
+      "R3 - Good job (sing)" 
+   )
+)
++Name: Red 2 or 3 - Good flying sing
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( and 
+      ( != ( hits-left "Observer" ) 100 ) 
+      ( not ( skill-level-at-least "Easy" ) ) 
+   )
+   ( repair-subsystem 
+      "Observer" 
+      "Hull" 
+      2 
+   )
+)
++Name: Very Easy - CRV regen
++Repeat Count: -1
++Trigger Count: 1000
++Interval: 9
+
+$Formula: ( when 
+   ( is-event-true-delay 
+      "Conditions to depart" 
+      14 
+   )
+   ( when-argument 
+      ( every-of 
+         "Red 2" 
+         "Red 3" 
+         "Gold 1" 
+         "Gold 2" 
+      )
+      ( true ) 
+      ( set-player-orders 
+         "<argument>" 
+         ( false ) 
+         "Destroy my target" 
+         "Disable my target" 
+         "Disarm my target" 
+         "Destroy subsystem" 
+         "Ignore my target" 
+         "Protect my target" 
+         "Form on my wing" 
+         "Cover me" 
+         "Engage enemy" 
+         "Depart" 
+      )
+      ( clear-goals "<argument>" ) 
+      ( add-goal 
+         "<argument>" 
+         ( ai-warp-out 120 ) 
+      )
+   )
+)
++Name: Fighters jump
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( < ( shields-left "Observer" ) 100 ) 
+   ( set-shield-energy 
+      ( + ( shields-left "Observer" ) 1 ) 
+      "Observer" 
+   )
+)
++Name: Recharge shields
++Repeat Count: 2000
++Interval: 2
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Alpha" ) 
+   ( ship-visible 
+      "Alpha 1" 
+      "Alpha 2" 
+      "Alpha 3" 
+   )
+)
++Name: Abr Alpha detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Beta" ) 
+   ( do-nothing ) 
+)
++Name: Conq Beta directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Beta", -1)
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Beta 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Beta" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Beta" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Conq Beta orders
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Beta" ) 
+   ( ship-visible 
+      "Beta 1" 
+      "Beta 2" 
+      "Beta 3" 
+      "Beta 4" 
+   )
+)
++Name: Conq Beta detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 0 "Gamma" ) 
+   ( send-message-list 
+      "Observer" 
+      "High" 
+      "CRV - TBs here" 
+      800 
+   )
+)
++Name: Runeforger Gamma here
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Gamma" ) 
+   ( ship-visible 
+      "Gamma 1" 
+      "Gamma 2" 
+      "Gamma 3" 
+      "Gamma 4" 
+   )
+)
++Name: Runeforger Gamma detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Gamma" ) 
+   ( do-nothing ) 
+)
++Name: Runeforger Gamma directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Gamma", -1)
+
+$Formula: ( when 
+   ( has-arrived-delay 0 "Tau" ) 
+   ( send-message-list 
+      "Observer" 
+      "High" 
+      "CRV - TBs here" 
+      800 
+   )
+)
++Name: Riven Delta here
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Tau" ) 
+   ( ship-visible 
+      "Tau 1" 
+      "Tau 2" 
+      "Tau 3" 
+   )
+)
++Name: Riven Delta detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Tau" ) 
+   ( do-nothing ) 
+)
++Name: Riven Delta directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Tau", -1)
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Gamma 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Gamma" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Gamma" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Rune Gamma orders
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Tau 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Tau" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Tau" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Riven Delta orders
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( or 
+      ( has-arrived-delay 1 "Fortune" ) 
+      ( has-arrived-delay 1 "Pillager" ) 
+   )
+   ( send-message 
+      "Observer" 
+      "Normal" 
+      "CRV - Pirates here" 
+   )
+)
++Name: Pirates here
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Fortune" ) 
+   ( ship-visible 
+      "Fortune 1" 
+      "Fortune 2" 
+      "Fortune 3" 
+   )
+)
++Name: Fortune detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Fortune" ) 
+   ( do-nothing ) 
+)
++Name: Fortune directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Fortune", -1)
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Fortune 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Fortune" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Fortune" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Fortune orders
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( < 
+      ( distance "Observer" "Pillager 1" ) 
+      2200 
+   )
+   ( add-goal 
+      "Red 2" 
+      ( ai-chase 
+         "Pillager" 
+         @R2LambdaPriority[51] 
+      )
+   )
+   ( add-goal 
+      "Red 3" 
+      ( ai-chase 
+         "Pillager" 
+         @R3LambdaPriority[51] 
+      )
+   )
+)
++Name: Red wing Pillager orders
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( has-arrived-delay 7 "Pillager" ) 
+   ( ship-visible 
+      "Pillager 1" 
+      "Pillager 2" 
+      "Pillager 3" 
+   )
+)
++Name: Pillager detectable
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( is-destroyed-delay 0 "Pillager" ) 
+   ( do-nothing ) 
+)
++Name: Pillager directive
++Repeat Count: 1
++Interval: 1
++Objective:  XSTR("Eliminate Pillager", -1)
+
+$Formula: ( when 
+   ( is-cargo-known-delay 0 "Longevity" ) 
+   ( show-subtitle-text 
+      "Warning" 
+      60 
+      60 
+      ( false ) 
+      ( false ) 
+      1250 
+      500 
+      0 
+      255 
+      0 
+      0 
+      "font_medium" 
+   )
+)
++Name: Longevity scanned
++Repeat Count: -1
++Trigger Count: 3
++Interval: 2
+
+$Formula: ( when 
+   ( true ) 
+   ( show-subtitle-text 
+      "Volatile Cargo" 
+      58 
+      62 
+      ( false ) 
+      ( false ) 
+      5555 
+      100 
+      0 
+      255 
+      255 
+      255 
+      "font_medium" 
+   )
+)
++Name: Volatile
++Repeat Count: 1
++Interval: 1
++Chained: 1
+
+$Formula: ( when 
+   ( and 
+      ( is-event-true-delay 
+         "CRV waypoints okay" 
+         4 
+      )
+      ( not ( skill-level-at-least "Hard" ) ) 
+   )
+   ( ship-unstealthy 
+      "Sensor Satellite" 
+      "Longevity" 
+   )
+   ( ship-invisible 
+      "Sensor Satellite" 
+      "Longevity" 
+   )
+)
++Name: Temp highlight bonus ship
++Repeat Count: 1
++Interval: 1
+
+$Formula: ( when 
+   ( true ) 
+   ( ship-stealthy 
+      "Sensor Satellite" 
+      "Longevity" 
+   )
+   ( ship-visible 
+      "Sensor Satellite" 
+      "Longevity" 
+   )
+)
++Name: Temp highlight bonus ship off
++Repeat Count: 1
++Interval: 1
++Chained: 3
+
+$Formula: ( when ( true ) ( do-nothing ) ) 
++Name: EnableDynamicMusic
++Repeat Count: 1
++Interval: 1
+
+#Goals		;! 3 total
+
+$Type: Primary
++Name: Escort Observer
+$MessageNew:  XSTR("Escort Observer Through the Asteroid Field", -1)
+$end_multi_text
+$Formula: ( has-departed-delay 0 "Observer" ) 
++Score: 150
+
+$Type: Bonus
++Name: SpySat
+$MessageNew:  XSTR("Destroy Imperial Satellite", -1)
+$end_multi_text
+$Formula: ( is-destroyed-delay 
+   0 
+   "Sensor Satellite" 
+)
++No music
++Score: 150
+
+$Type: Bonus
++Name: ActionVI
+$MessageNew:  XSTR("Destroy Longevity", -1)
+$end_multi_text
+$Formula: ( is-destroyed-delay 0 "Longevity" ) 
++No music
++Score: 150
+
+#Waypoints		;! 3 lists total
+
+$Name: JumpOut
+$List: (		;! 1 points in list
+	( 706.973328, 600.000000, 11757.815430 )
+)
+
+$Name: JumpOutPoint Friendly
+$List: (		;! 1 points in list
+	( 306.740723, 4307.947266, 19364.785156 )
+)
+
+$Name: JumpOut2
+$List: (		;! 1 points in list
+	( 563.795044, 690.275085, 11836.934570 )
+)
+
+#Messages		;! 39 total
+
+$Command Sender: Alliance Headquarters
+
+$Name: R1 - Field
+$Team: -1
+$MessageNew:  XSTR("Stay focused, Red Group.  This asteroid field is thicker than anticipated.", -1)
+$end_multi_text
+
+$Name: CRV - Guns
+$Team: -1
+$MessageNew:  XSTR("Initializing primary weapon diagnostics...  All systems are functioning at 100%.", -1)
+$end_multi_text
+
+$Name: R3 - Help us
+$Team: -1
+$MessageNew:  XSTR("That's good to hear.  We can use every gun you can give us.", -1)
+$end_multi_text
+
+$Name: CRV - Guns 2
+$Team: -1
+$MessageNew:  XSTR("Gunnery control is cleared to fire at will.", -1)
+$end_multi_text
+
+$Name: CRV - Lambda
+$Team: -1
+$MessageNew:  XSTR("Sensors are picking up something...  enemy TIEs approaching.", -1)
+$end_multi_text
+
+$Name: CRV - Disabled
+$Team: -1
+$MessageNew:  XSTR("Our engines have taken critical damage--it's no good, Red Leader.", -1)
+$end_multi_text
+
+$Name: R1 - Rescue?
+$Team: -1
+$MessageNew:  XSTR("This is Red 1 to HQ.  The Observer has been disabled.  Requesting immediate extraction.", -1)
+$end_multi_text
+
+$Name: CRV - Not responding
+$Team: -1
+$MessageNew:  XSTR("They're not responding.  This asteroid field must be interfering with long-range communications.", -1)
+$end_multi_text
+
+$Name: CRV - Empire here
+$Team: -1
+$MessageNew:  XSTR("You have no choice but to leave us here.  Red Squadron, you must get out while you can.", -1)
+$end_multi_text
+
+$Name: CRV - Carracks here
+$Team: -1
+$MessageNew:  XSTR("Two Arquitens Cruisers are approaching!  I repeat, Red Squadron: Return to base.  For the Alliance!", -1)
+$end_multi_text
+
+$Name: R1 - CRV down, not disabled
+$Team: -1
+$MessageNew:  XSTR("[Returning to base is your only option left]", -1)
+$end_multi_text
+
+$Name: R2 - Lets
+$Team: -1
+$MessageNew:  XSTR("We should blast nearby asteroids in advance, just in case.", -1)
+$end_multi_text
+
+$Name: R3 - Stay close
+$Team: -1
+$MessageNew:  XSTR("Mind your distance, though.  This is an escort mission after all.", -1)
+$end_multi_text
+
+$Name: CRV - Firing arc
+$Team: -1
+$MessageNew:  XSTR("Our turrets cannot cover the whole of our ship.  We're relying on you hotshots to cover our blind spots.", -1)
+$end_multi_text
+
+$Name: R2 - Weapon energy
+$Team: -1
+$MessageNew:  XSTR("Copy that.  Re-routing all energy into weapons.", -1)
+$end_multi_text
+
+$Name: R3 - Bad idea
+$Team: -1
+$MessageNew:  XSTR("Don't get cocky, Red 2.  Keep some power directed towards your shields at all times.  You're no good to us dead.", -1)
+$end_multi_text
+
+$Name: R2 - Presumption
+$Team: -1
+$MessageNew:  XSTR("Acknowledged.  Still, they always say that the best defense is a good offense.", -1)
+$end_multi_text
+
+$Name: CRV - Hit
+$Team: -1
+$MessageNew:  XSTR("We're hit.", -1)
+$end_multi_text
+
+$Name: CRV - Shields failing
+$Team: -1
+$MessageNew:  XSTR("Our shields are failing on us!  Repeat: shields are weakened.", -1)
+$end_multi_text
+
+$Name: CRV - All shields X
+$Team: -1
+$MessageNew:  XSTR("Our shields have fallen on all four quadrants.", -1)
+$end_multi_text
+
+$Name: R2 - R3 down
+$Team: -1
+$MessageNew:  XSTR("Red 3!  No!", -1)
+$end_multi_text
+
+$Name: R3 - R2 down
+$Team: -1
+$MessageNew:  XSTR("Red 2!  No!", -1)
+$end_multi_text
+
+$Name: Any - Corvette X
+$Team: -1
+$MessageNew:  XSTR("Blast!  The Observer has been destroyed.  I suggest returning to base.", -1)
+$end_multi_text
+
+$Name: CRV - Debilitated
+$Team: -1
+$MessageNew:  XSTR("Our hull is nearing critical condition.", -1)
+$end_multi_text
+
+$Name: CRV - Almost there
+$Team: -1
+$MessageNew:  XSTR("We're gonna make it.", -1)
+$end_multi_text
+
+$Name: CRV - Almost there (damaged)
+$Team: -1
+$MessageNew:  XSTR("We're hanging in there.  Just a few more clicks...", -1)
+$end_multi_text
+
+$Name: CRV - Report exc
+$Team: -1
+$MessageNew:  XSTR("Excellent job so far, Red Squadron.  Don't let your guard down.", -1)
+$end_multi_text
+
+$Name: CRV - Report good
+$Team: -1
+$MessageNew:  XSTR("We're halfway to our destination.  Keep up the good work.", -1)
+$end_multi_text
+
+$Name: CRV - Report med
+$Team: -1
+$MessageNew:  XSTR("We're halfway to our destination.", -1)
+$end_multi_text
+
+$Name: CRV - Report bad
+$Team: -1
+$MessageNew:  XSTR("We're seriously damaged and we're only halfway.  This will be rough.", -1)
+$end_multi_text
+
+$Name: CRV - Jumping
+$Team: -1
+$MessageNew:  XSTR("Entering hyperspace...", -1)
+$end_multi_text
+
+$Name: Any - Where are you?
+$Team: -1
+$MessageNew:  XSTR("Where are you going, Red Leader?", -1)
+$end_multi_text
+
+$Name: R2 - We made it
+$Team: -1
+$MessageNew:  XSTR("Another good day for the Rebellion!", -1)
+$end_multi_text
+
+$Name: R3 - Good job (pl)
+$Team: -1
+$MessageNew:  XSTR("Great flying, team.  Ready to head home.", -1)
+$end_multi_text
+
+$Name: R3 - Good job (sing)
+$Team: -1
+$MessageNew:  XSTR("Great flying.  Too bad about Red 2, though.  We should head home.", -1)
+$end_multi_text
+
+$Name: CRV - TBs here
+$Team: -1
+$MessageNew:  XSTR("Sensors are picking up something...  Imperial assault craft closing in!", -1)
+$end_multi_text
+
+$Name: CRV - Pirates here
+$Team: -1
+$MessageNew:  XSTR("There's something on sensors...  pirates incoming!", -1)
+$end_multi_text
+
+$Name: Warning
+$Team: -1
+$MessageNew:  XSTR("! ! ! WARNING ! ! !", -1)
+$end_multi_text
+
+$Name: Volatile Cargo
+$Team: -1
+$MessageNew:  XSTR("Volatile Cargo Detected", -1)
+$end_multi_text
+
+#Reinforcements		;! 1 total
+
+$Name: Gold
+$Type: Attack/Protect
+$Num times: 1
++Arrival Delay: 0
++No Messages: ( )
++Yes Messages: ( )
+
+#Background bitmaps		;! 4 total
+
+$Num stars: 500
+$Ambient light level: 4613735
+
+$Bitmap List:
++Flags: ( "corrected angles" )
+$Sun: SunGold
++Angles: 6.265557 5.060408 5.105437
++Scale: 4.000000
+$Starbitmap: S_AsteroidsBrownGrey
++Angles: 0.000000 3.141593 5.759586
++ScaleX: 8.000000
++ScaleY: 8.000000
++DivX: 1
++DivY: 1
+$Starbitmap: S_AsteroidsBrownGrey
++Angles: 0.000000 0.000000 0.453786
++ScaleX: 6.000000
++ScaleY: 6.000000
++DivX: 1
++DivY: 1
+$Starbitmap: S_AsteroidsBrownGrey
++Angles: 0.000000 3.141593 1.343904
++ScaleX: 8.000000
++ScaleY: 8.000000
++DivX: 1
++DivY: 1
+$Starbitmap: S_AsteroidsBrownGrey
++Angles: 0.000000 0.000000 2.146755
++ScaleX: 10.000000
++ScaleY: 10.000000
++DivX: 1
++DivY: 1
+
+#Asteroid Fields
+
+$Density: 115
++Field Type: 0
++Debris Genre: 0
++Field Debris Type Name: Brown
+$Average Speed: 36.005077
+$Minimum: -4200.000000, -1500.000000, 2000.000000
+$Maximum: 2000.000000, 1500.000000, 16000.000000
++Use Enhanced Checks
+
+#Music
+
+$Event Music: Alderaan
+$Briefing Music: Brief3
+
+#End
+
