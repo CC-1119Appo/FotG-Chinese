@@ -1,0 +1,160 @@
+#Fonts
+
+;; First three listed fonts are hard coded for certain components, such as menus and techroom descriptions.
+;; +Auto Size: is if this font changes sizes automatically at varying resolutions
+;;    Not good for UI font, since UI scales it in a different way. 
+;;    Plus, at >=4k the font auto-scaling compounds with the UI scaling to make the font too big
+;;    Downside is without font autocaling the text is too long and does not fit within boxes at 640x480...
+;;    And the font scaler does not help b/c the newline space is still too big
+;;    1024x768 works just fine though...
+;; +Can Scale: is if this font can be set as smaller or larger from the in-game options font sizer slider
+;;    Can Scale is useful to allow folks who have super large or tiny monitors to use the in-game font slider scale
+
+;; Default Fonts [used for retial-based UI] (interface scales even if auto size off) ===================
+
+    $TrueType: song.ttf ;;00
+        +Name: default_medium
+        +Size: 23
+        +Auto Size: no
+        +Can Scale: Yes
+        +Top offset:    -9
+        +Bottom offset: 2
+
+    $TrueType: song.ttf ;;01
+        +Name: default_large_sc
+        +Size: 24
+        +Auto Size: no
+        +Can Scale: Yes
+        +Top offset:    -10
+        +Bottom offset: 2
+
+    $TrueType: song.ttf ;;02
+        +Name: default_small_sc
+        +Size: 10
+        +Auto Size: no
+        +Can Scale: Yes
+        +Top offset:    -3
+        +Bottom offset:    3
+
+    $TrueType: song.ttf ;;03 ;;used by index in help.tbl find: +font 3 3
+        +Name: font_mainhall
+        +Size: 50
+        +Auto Size: no
+        +Can Scale: Yes
+        +Top offset:    -13
+        +Bottom offset: 13
+;
+;
+;; FotG Scripting Fonts [used for custom UI and script text drawing] (scales and autosizes) ===================
+
+    $TrueType: Aurebesh.ttf ;;04 ;;Aurebesh version of medium font
+        +Name: font_aurbesh
+        +Size: 16
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -4
+        +Bottom offset:    5
+
+    $TrueType: song.ttf ;;05 
+        +Name: font_medium
+        +Size: 20 ;fsize_medium
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -4
+        +Bottom offset:    5
+
+    $TrueType: song.ttf ;;06
+        +Name: font_bold_medium
+        +Size: 20 ;fsize_medium
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -4
+        +Bottom offset:    5
+
+    $TrueType: song.ttf ;;07
+        +Name: font_large
+        +Size: 30 ;fsize_large
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -7
+        +Bottom offset:    8
+
+    $TrueType: song.ttf ;;08
+        +Name: font_bold_large
+        +Size: 30 ;fsize_large
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -7
+        +Bottom offset:    8
+
+    $TrueType: song.ttf ;;09
+        +Name: font_small
+        +Size: 12 ;fsize_small
+        +Auto Size: Yes
+        +Can Scale: Yes
+        +Top offset:    -3
+        +Bottom offset:    3
+;
+;
+;; FotG HUD Fonts Normal [used for HUDs] (no scaling and no autosize) ===================
+
+    $TrueType: 16pxsong.ttf ;;10
+        +Name: font_hud_default
+        +Size: 15
+        +Auto Size: no
+        +Can Scale: yes
+        +Top offset:    -3
+        +Bottom offset:    6
+
+    $TrueType: 16pxsong.ttf ;;10
+        +Name: font_hud_config
+        +Size: 16
+        +Auto Size: no
+        +Can Scale: yes
+        +Top offset:    -5
+        +Bottom offset:    6
+
+    $TrueType: 16pxsong.ttf ;;11
+        +Name: font_hud_message
+        +Size: 18
+        +Auto Size: no
+        +Can Scale: yes
+        +Top offset:    -4
+        +Bottom offset:    5
+
+    $TrueType: 16pxsong.ttf ;;12
+        +Name: font_hud_warning
+        +Size: 18
+        +Auto Size: no
+        +Can Scale: yes
+        +Top offset:    0
+        +Bottom offset:    4
+
+    $TrueType: 16pxsong.ttf ;;13
+        +Name: font_hud_title
+        +Size: 20
+        +Auto Size: no
+        +Can Scale: yes
+        +Top offset:    -7
+        +Bottom offset:    6
+;
+;
+;; FotG HUD Fonts Special [used for HUDs] (no scaling and no autosize) ===================
+    $TrueType: Miloner_Medium.ttf ;;14
+        +Name: font_miloner
+        +Size: 40
+        +Auto Size: false
+        +Can Scale: false
+        +Top offset: 0
+        +Bottom offset: 0
+
+    $TrueType: JuliaMono-SemiBold.ttf ;;15
+        +Name: font_julia
+        +Size: 12
+        +Auto Size: false
+        +Can Scale: false
+        +Top offset: 0
+        +Bottom offset: 0
+;
+;
+#End
