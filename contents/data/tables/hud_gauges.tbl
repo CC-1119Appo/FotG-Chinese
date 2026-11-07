@@ -1,0 +1,4501 @@
+#HUD Config Settings
+
+$Show Default HUD: YES
+$Shield Gauge Ship: Z-95 Headhunter
+$Shield Gauge Target Ship: TIE Advanced X1
+$Primary Weapons: ("T&B KX-5#Reb")
+$Secondary Weapons: ("Krupx MG5#Orn")
+$Example Wing Names: ("Red" "Blue" "Green" "Gold" "Grey")
+
+#HUD Global Settings
+
+;;Gauges all use `2_` prefix since FSO hardcodes that as high_res
+
+$Load Retail Configuration: No		; If set to Yes, FSO will load any missing gauges necessary to complete the FS1/FS2 retail configuration. 
+									; If field is not present, FSO will default this to Yes.
+$Font: font_hud_default
+$Max Directives:  10				
+$Max Escort Ships: 20
+$Wireframe Targetbox: 3 ;change to 1 for wireframe 
+$Targetbox Shader Effect: 3
+$Lock Wireframe Mode: true
+
+$Scale Gauges: NO 
+;; Note, a NO here really means 'Do not scale gauges if the game's resolution is between the $Base and $Force Scaling resolutions'. 
+;; Gauges will still always be scaled if the game's resolution is less then the $Base resolution.
+;; Similarly, gauges will be scaled to the resolution of Force Scaling if Force Scaling is set (or to monitor resolution if that is larger it seems).  
+
+;; Also note, that using the -res flag from the launcher in full screen 
+;; makes the gauges look like they are not scaling correctly, even though they are.
+
+;; With gauge scaling off, $Force Scaling Above: (1920, 1080) will scale the HUD as though it were being rendered at 1080p.
+;; This is the setting most FSO mods use.
+
+$Force Scaling Above: (1600, 900)
+;; Optional. If gauge scaling is disabled, then gauges will be scaled 
+;; as though the base resolution were this resolution or the real base resolution, whichever is greater.
+;; Use this to disable scaling at lower resolutions while preventing gauges from getting too small at higher resolutions.
+
+;; SLEW
+	;; If set to "true", the gauge will not follow the player's head movements when using TrackIR/padlock. 
+	;; i.e. should be used for gauges like the gunsight/leadsight.
+	;; SLEW means stay put
+	;; Looks a bit odd on some gauges, plus nice to see hud details while looking at target 
+	;; Also only applies to 1st person, and HUD could be said to projected on helmet visor
+
+;; MUST HAVE SLEW (Slew: YES ;; center)
+	;; +Mini Target Shields:
+	;; +Hostile Triangle:
+	;; +Target Triangle:
+	;; +Missile Triangles:
+
+;; MESSAGES: (Slew: NO ;; messages)
+	;; +Custom:
+	;; +Directives:
+	;; +Messages:
+	;; +Support:
+	;; +Damage:
+	;; +Objective Notify:
+	;; +Squad Message:
+	;; +Lag:
+	;; +Escort View:
+	;; +Text Warnings:
+
+;; RTT: (Slew: NO ;; rtt)
+	;; +Wingman Status:
+	;; +Auto Speed:
+	;; +Auto Target:
+	;; +Countermeasures:
+	;; +Weapons:
+	;; +Radar:
+	;; +Player Shields:
+	;; +Target Shields:
+	;; +Mission Time:
+	;; +ETS Weapons:
+	;; +ETS Engines:
+	;; +ETS Shields:
+	;; +Extra Target Data:
+	;; +Afterburner Energy:
+	;; +Weapon Energy:
+	;; +Throttle:
+	;; +Threat Indicator:
+	;; +Kills:
+
+;;=============================================================================
+;; Base configuration most users will see. Has no maximum, and all gauges use `Origin` and `Offset` instead of `Position`. 
+;; Gauges will scale at resolutions according to `$Force Scaling Above:` values set above. 
+;; Also note, that the $Base resolution only affects how much the gauges will scale by at different resolutions. 
+;; The current base is set at (1600, 900) to ensure that when the game resolution is larger (up to the max set at Force Scaling) then the gauges will not be too big. 
+;; If the $Base was (640, 480) then the gauges at the Force Scaling resolution of (1920, 1080) would be very large. 
+;; Also note, that if Force Scaling is set, then gauges will only be scaled up to that resolution, even if the game resolution is higher. 
+
+;; Note, there is no min or max since otherwise additional gauge config sections would be needed for gauges to show up for different resolutions.
+
+;; Used for display in HUD configure screen
+#Gauge Config
+	$Base: (1600, 900)
+	;$Required Aspect: Wide Screen 		; Optional. This decreases the amount of custom Gague Configs needed. 
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional.  
+	;$Max: (7680, 4320)	
+	$Gauges:
+
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (1.0, 0.5)
+			Offset: (-175, -50)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0.0, 1.0)
+			Offset: (240, -103)
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0.5, 1.0)
+			Offset: (200, -103)
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0.5, 1.0)
+			Offset: (-205, -108)
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (6, 90)
+			Always Show Text: yes
+
+		+Throttle: 
+			Origin: (0.5, 1.0)
+			Offset: (160, -115)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (10000, 105)
+			Orbit Radius: 10002
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0.5, 1.0)
+			Offset: (-370, -90)
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 43)
+			Lock Offsets: (0, 0)
+
+		+Auto Target:
+			Origin: (0.5, 1.0)
+			Offset: (315, -94)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (17, 6)
+			Target Offsets: (11, 20)
+
+		+Auto Speed:
+			Origin: (0.5, 1.0)
+			Offset: (315, -48)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (17, 6)
+			Speed Offsets: (12, 20)
+	
+		+Kills: 
+			Origin: (1.0, 1.0)
+			Offset: (-80, -30)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (1.0, 1.0)
+			Offset: (-210, -30)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		;; +Weapons: below
+
+		+ETS Weapons: 
+			Origin: (0.5, 1.0)
+			Offset: (-290, -95)
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			Top Offsets: (0, 0)
+			Bottom Offsets: (0, 0) ;(0, 200)
+
+		+ETS Shields: 
+			Origin: (0.5, 1.0)
+			Offset: (-265, -95)
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			Top Offsets: (0, 0)
+			Bottom Offsets: (0, 0) ;(0, 200)
+
+		+ETS Engines: 
+			Origin: (0.5, 1.0)
+			Offset: (-240, -95)
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			Top Offsets: (0, 0)
+			Bottom Offsets: (0, 0) ;(0, 200)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (184, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (90, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0.0, 1.0)
+			Offset: (10, -310)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 3)
+			Dock Offsets: (12, 27)
+			;Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			;Order Max Width: 159;
+			Time Offsets: (12, 14)
+
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Weapons: 
+			Origin: (1.0, 1.0)
+			Offset: (-221, -165)
+			Font: font_hud_config
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1
+			Primary List Middle Background Filename: 2_weapons2
+			Primary List Bottom Background Filename: 2_weapons2
+			Secondary List Top Background Filename:  2_weapons3
+			Secondary List Entry Background Filename: 2_weapons4
+			Secondary List Bottom Background Filename: 2_weapons5
+			Header Offsets: (40, 4)
+			Top Primary Background X-offset: 23
+			Text X-offset: 4
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 38
+			Primary Weapon Name X-offset: 49
+			Secondary Weapon Ammo X-offset: 31
+			Secondary Weapon Unlinked X-offset: 39
+			Secondary Weapon Linked X-offset: 33
+			Secondary Weapon Name X-offset: 49
+			Secondary Weapon Reload X-offset: 188
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		;; RTT End
+
+		+Custom: ;Targeting_Comp
+			Origin: (0.5, 0.5)
+			Offset: (-27, -16)
+			Name: Targeting_Comp
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_reticle_tcomp
+		+Custom: ;Fire_Stationary
+			Origin: (0.5, 0.5)
+			Offset: (-2, -22)
+			Name: Fire_Stationary
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_reticle_C
+		+Custom: ;Fire_Burst
+			Origin: (0.5, 0.5)
+			Offset: (-4, 19)
+			Name: Fire_Burst
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_reticle_D
+		+Lock Indicator:
+			Lock Filename: 2_lock1
+			Locked Filename: 2_lockspin
+			Lock Center Offsets: (28, 25)
+			Locked Center Offsets: (50, 52)			
+		+Messages: 
+			Origin: (0.5, 0.2)
+			Offset: (-80, 0)
+			Font: font_hud_title
+			Slew: NO ;; messages
+			Max Lines: 10
+			Max Width: 460
+			Line Height: 16
+			Total Lifetime: 6000
+			Hidden By Comms Menu: NO
+		+Custom: ;CustomMessage_Frame
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_title
+			Name: CustomMessage_Frame
+			Text: Incoming transmission	
+			X Offset: 10
+			Y Offset: 8
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_message
+		+Custom: ;CustomMessage_Body
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_message
+			Name: CustomMessage_Body
+			Text: Message decoding
+			X Offset: 10
+			Y Offset: 34
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Training Messages: 
+			Origin: (0.5, 0.5)
+			Offset: (-133, -150)
+			Font: font_hud_config
+			Slew: NO ;; messages
+		+Multiplayer Messages:
+			Origin: (0.5, 0.5)
+			Offset: (-220, -120)
+			Font: font_hud_title
+			Slew: NO ;; messages
+		+Fixed Messages:
+			Origin: (0.5, 0.5)
+			Offset: (0, 20)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Center Text On Gauge X-Position: true
+		+Custom: ;ExtraInfo_Frame
+			Origin: (0.5, 0.5)
+			Offset: (-100, 100)
+			Font: font_hud_message
+			Name: ExtraInfo_Frame
+			Text: Aquiring Signal	
+			X Offset: 7
+			Y Offset: 4
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_i_frame
+		+Custom: ;ExtraInfo_Body
+			Origin: (0.5, 0.5)
+			Offset: (-100, 120)
+			Font: font_hud_message
+			Name: ExtraInfo_Body
+			Text: Updating Signal
+			X Offset: 7
+			Y Offset: 2
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Support: 
+			Origin: (0.75, 0)
+			Offset: (-60, 10)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Filename: 2_support1
+			Header Offsets: (4, 3)
+			Text Y-offset: 23
+			Dock Status X-offset: 6
+			Dock Time X-offset: 65
+			Enable Rearm Timer: YES
+
+		+Damage: 
+			Origin: (0.5, 0.0)
+			Offset: (-119, 10)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Top Background Filename: 2_damage1
+			Entry Background Filename: 2_damage2
+			Bottom Background Filename: 2_damage3
+			Header Offsets: (4, 3)
+			Hull Integrity Offsets: (6, 20)
+			Hull Integrity Value X-offset: 230
+			Top Background Height: 32
+			Subsystem Entry Height: 14
+			Subsystem List Start Offsets: (6, 35)
+			Subsystem Entry Value X-offset: 230
+
+		+Directives: 
+			Origin: (0.0, 0.0)
+			Offset: (10, 10)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Top Background Filename: 2_directives1
+			Entry Background Filename: 2_directives2
+			Bottom Background Filename: 2_directives3
+			Header Offsets: (4, 4)
+			Top Background Height: 20
+			List Start Offsets: (6, 21)
+			Entry Height: 14
+			Max Line Width: 238 ;248
+			Key Line X Offset: 8
+		+Custom: ;CustomRoleGauge_Frame
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Frame
+			Text: Squadron Roles
+			X Offset: 5
+			Y Offset: 6
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_roles
+		+Custom: ;CustomRoleGauge_Body
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Body
+			Text: Assignments
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Objective Notify: 
+			Origin: (0.5, 0.5)
+			Offset: (-119, 50)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Filename: 2_objectives1
+			Objective Text Y-offset: 5
+			Objective Value Y-offset: 17
+			Subspace Text Y-offset: 5
+			Subspace Value Y-offset: 17
+			Red Alert Text Y-offset: 5
+			Red Alert Value Y-offset: 17
+		+Squad Message: 
+			Origin: (1.0, 0.0)
+			Offset: (-266, 10)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Top Background Filename: 2_messages1
+			Entry Background Filename: 2_messages2
+			Bottom Background Filename: 2_messages3
+			Header Offsets: (5, 4)
+			List Start Offsets: (3, 21)
+			Top Background Height: 20
+			Entry Height: 17
+			Command X-offset: 22
+			Page Up Offsets: (110, 5)
+			Page Down Offsets: (110, 5)
+			Ship Name Max Width: 217
+		+Escort View: 
+			Origin: (0.0, 0.23778)
+			Offset: (10, 0)
+			Font: font_hud_config
+			Slew: NO ;; messages
+			Top Background Filename: 2_escort1
+			Entry Background Filename: 2_escort2
+			Bottom Background Filename: 2_escort3
+			Entry Height: 14
+			Header Text: 优先
+			Header Offsets: (4, 4)
+			List Start Offsets: (0, 21)
+			Hull X-offset: 208
+			Name X-offset: 6
+			Status X-offset: 170
+			Ship Name Max Width: 160
+		+Text Warnings: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 20)
+			Font: font_hud_warning
+			Slew: NO ;; messages
+		+Mini Target Shields:
+			Origin: (0.5, 0.5)
+			Offset: (-16, 78)
+			Slew: YES ;; center
+			Filename: 2_hit1-blank
+			3 Digit Hull Offsets: (6, 7)
+			2 Digit Hull Offsets: (10, 7)
+			1 Digit Hull Offsets: (14, 7)
+		+Voice Status: 
+			Origin: (0.00833, 0.21444)
+			Offset: (0, 0)
+		+Ping: 
+			Origin: (0.78403, 0.00667)
+			Offset: (0, 0)
+		+Lag:
+			Origin: (0.5, 0.5)
+			Offset: (-24, 145)
+			Slew: NO ;; messages
+			Filename: 2_netlag1
+		+Supernova: 
+			Origin: (0.0, 0.22)
+			Offset: (0, 0)
+		+Target Brackets: 			; Target Brackets, Lock Indicator, Lead Indicator, and Offscreen Indicator don't need a 'Position:' field.
+			Dot Filename: 2_attacker1
+			Enable Target Info: YES
+		+Lead Indicator:
+			Filename: 2_lead1
+			;Center Offsets: (13, 13)		
+		+Offscreen Indicator:
+		+Hostile Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Target Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Missile Triangles: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Orientation Tee: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Radius: 123
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 6
+			Firepoint Y coordinate multiplier: 4
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End	
+
+
+;;============================================================================================================================
+;; Cockpits 
+
+;; Special Cap Ship Controller =================================================================
+
+#Gauge Config   ;; 
+	$Name: HUD_ShipController
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (1.0, 0.5)
+			Offset: (-175, -50)
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0.0, 1.0)
+			Offset: (240, -103)
+			Slew: NO ;; rtt
+
+		+Throttle: 
+			Origin: (0.5, 1.0)
+			Offset: (160, -115)
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (10000, 105)
+			Orbit Radius: 10002
+			Show Percentage: YES
+			Match Speed Status Offsets: (2, 65)
+
+		+Auto Target:
+			Origin: (0.5, 1.0)
+			Offset: (315, -94)
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)
+
+		+Auto Speed:
+			Origin: (0.5, 1.0)
+			Offset: (315, -48)
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13,20)
+
+		+Mission Time: 
+			Origin: (1.0, 1.0)
+			Offset: (-210, -30)
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		;; +Weapons: below
+
+		;; Target Monitor: below
+
+		+Extra Target Data:
+			Origin: (0.0, 1.0)
+			Offset: (10, -310)
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 3)
+			Dock Offsets: (12, 27)
+			;Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			;Order Max Width: 159;
+			Time Offsets: (12, 14)
+
+		;; RTT End
+
+		;; +Center Reticle: below
+
+		+Messages: 
+			Origin: (0.5, 0.2)
+			Offset: (-170, 0)
+			Font: font_hud_message
+			Slew: NO ;; messages
+			Max Lines: 10
+			Max Width: 460
+			Line Height: 16
+			Total Lifetime: 6000
+			Hidden By Comms Menu: NO
+		+Custom:
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_title
+			Name: CustomMessage_Frame
+			Text: Incoming transmission	
+			X Offset: 10
+			Y Offset: 8
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_message
+		+Custom:
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_message
+			Name: CustomMessage_Body
+			Text: Message decoding
+			X Offset: 10
+			Y Offset: 34
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Training Messages: 
+			Origin: (0.5, 0.5)
+			Offset: (-133, -150)
+			Font: font_hud_message
+			Slew: NO ;; messages
+		+Multiplayer Messages:
+			Origin: (0.5, 0.5)
+			Offset: (-220, -120)
+			Font: font_hud_title
+			Slew: NO ;; messages
+		;+Fixed Messages:
+			;Origin: (0.5, 0.5)
+			;Offset: (0, 20)
+			;Slew: NO ;; messages
+			;Center Text On Gauge X-Position: true
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-100, 100)
+			Font: font_hud_message
+			Name: ExtraInfo_Frame
+			Text: Aquiring Signal	
+			X Offset: 7
+			Y Offset: 4
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_i_frame
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-100, 120)
+			Font: font_hud_message
+			Name: ExtraInfo_Body
+			Text: Updating Signal
+			X Offset: 7
+			Y Offset: 2
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Support: 
+			Origin: (0.75, 0)
+			Offset: (-60, 10)
+			Slew: NO ;; messages
+			Filename: 2_support1
+			Header Offsets: (4, 3)
+			Text Y-offset: 20
+			Dock Status X-offset: 6
+			Dock Time X-offset: 65
+			Enable Rearm Timer: YES
+
+		+Damage: 
+			Origin: (0.5, 0.0)
+			Offset: (-119, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_damage1
+			Entry Background Filename: 2_damage2
+			Bottom Background Filename: 2_damage3
+			Header Offsets: (4, 3)
+			Hull Integrity Offsets: (6, 20)
+			Hull Integrity Value X-offset: 230
+			Top Background Height: 32
+			Subsystem Entry Height: 14
+			Subsystem List Start Offsets: (6, 35)
+			Subsystem Entry Value X-offset: 230
+
+		+Directives: 
+			Origin: (0.0, 0.0)
+			Offset: (10, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_directives1
+			Entry Background Filename: 2_directives2
+			Bottom Background Filename: 2_directives3
+			Header Offsets: (4, 4)
+			Top Background Height: 20
+			List Start Offsets: (6, 21)
+			Entry Height: 14
+			Max Line Width: 238 ;248
+			Key Line X Offset: 8
+		+Custom:
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Frame
+			Text: Squadron Roles
+			X Offset: 5
+			Y Offset: 6
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_roles
+		+Custom:
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Body
+			Text: Assignments
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Objective Notify: 
+			Origin: (0.5, 0.5)
+			Offset: (-119, 50)
+			Slew: NO ;; messages
+			Filename: 2_objectives1
+			Objective Text Y-offset: 5
+			Objective Value Y-offset: 17
+			Subspace Text Y-offset: 5
+			Subspace Value Y-offset: 17
+			Red Alert Text Y-offset: 5
+			Red Alert Value Y-offset: 17
+		+Squad Message: 
+			Origin: (1.0, 0.0)
+			Offset: (-266, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_messages1
+			Entry Background Filename: 2_messages2
+			Bottom Background Filename: 2_messages3
+			Header Offsets: (5, 4)
+			List Start Offsets: (3, 21)
+			Top Background Height: 20
+			Entry Height: 17
+			Command X-offset: 22
+			Page Up Offsets: (110, 5)
+			Page Down Offsets: (110, 5)
+			Ship Name Max Width: 217
+		+Escort View: 
+			Origin: (0.0, 0.23778)
+			Offset: (10, 0)
+			Slew: NO ;; messages
+			Top Background Filename: 2_escort1
+			Entry Background Filename: 2_escort2
+			Bottom Background Filename: 2_escort3
+			Entry Height: 14
+			Header Text: 优先
+			Header Offsets: (4, 4)
+			List Start Offsets: (0, 21)
+			Hull X-offset: 208
+			Name X-offset: 6
+			Status X-offset: 170
+			Ship Name Max Width: 160
+		;+Text Warnings: 
+			;Origin: (0.5, 0.5)
+			;Offset: (0, 20)
+			;Font: font_hud_warning
+			;Slew: NO ;; messages
+		+Mini Target Shields:
+			Origin: (0.5, 0.5)
+			Offset: (-16, 78)
+			Slew: YES ;; center
+			Filename: 2_hit1-blank
+			3 Digit Hull Offsets: (6, 7)
+			2 Digit Hull Offsets: (10, 7)
+			1 Digit Hull Offsets: (14, 7)
+		+Voice Status: 
+			Origin: (0.00833, 0.21444)
+			Offset: (0, 0)
+		+Ping: 
+			Origin: (0.78403, 0.00667)
+			Offset: (0, 0)
+		+Lag:
+			Origin: (0.5, 0.5)
+			Offset: (-24, 145)
+			Slew: NO ;; messages
+			Filename: 2_netlag1
+		+Supernova: 
+			Origin: (0.0, 0.22)
+			Offset: (0, 0)
+		+Target Brackets: 			; Target Brackets, Lock Indicator, Lead Indicator, and Offscreen Indicator don't need a 'Position:' field.
+			Dot Filename: 2_attacker1
+			Enable Target Info: YES		
+		+Offscreen Indicator:
+		+Hostile Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Target Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Missile Triangles: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Orientation Tee: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Radius: 123
+	$End Gauges
+#End
+
+
+;; Common/non-RTT ==============================================================================================================================
+
+#Gauge Config   ;; All non-RTT gauges and RTT gauges without cockpit for ships with cockpit (expect for select gauges listed below)
+	$Name: HUD_Chase_Common_Base
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (1.0, 0.5)
+			Offset: (-175, -50)
+            Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0.0, 1.0)
+			Offset: (240, -103)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0.5, 1.0)
+			Offset: (200, -103)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0.5, 1.0)
+			Offset: (-205, -108)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (6, 90)
+			Always Show Text: yes
+
+		+Throttle: 
+			Origin: (0.5, 1.0)
+			Offset: (160, -115)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (10000, 105)
+			Orbit Radius: 10002
+			Show Percentage: YES
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0.5, 1.0)
+			Offset: (-370, -90)
+            Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 43)
+			Lock Offsets: (0, 0)
+
+		+Auto Target:
+			Origin: (0.5, 1.0)
+			Offset: (315, -94)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)
+
+		+Auto Speed:
+			Origin: (0.5, 1.0)
+			Offset: (315, -48)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Kills: 
+			Origin: (1.0, 1.0)
+			Offset: (-80, -30)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (1.0, 1.0)
+			Offset: (-210, -30)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		;; +Weapons: below
+
+		+ETS Weapons: 
+			Origin: (0.5, 1.0)
+			Offset: (-290, -95)
+            Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0.5, 1.0)
+			Offset: (-265, -95)
+            Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0.5, 1.0)
+			Offset: (-240, -95)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		;; Target Monitor: below
+
+		+Extra Target Data:
+			Origin: (0.0, 1.0)
+			Offset: (10, -310)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 3)
+			Dock Offsets: (12, 27)
+			;Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			;Order Max Width: 159;
+			Time Offsets: (12, 14)
+
+		;; RTT End
+
+		;; +Center Reticle: below
+
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-27, -16)
+			Name: Targeting_Comp
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Active by default: NO
+			Filename: 2_reticle_tcomp
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-2, -22)
+			Name: Fire_Stationary
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Active by default: NO
+			Filename: 2_reticle_C
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-4, 19)
+			Name: Fire_Burst
+			Text: 
+			Gauge Type: CENTER_RETICLE
+			Slew: YES ;; center
+			Active by default: NO
+			Filename: 2_reticle_D
+		+Lock Indicator:
+			Lock Filename: 2_lock1
+			Locked Filename: 2_lockspin
+			Lock Center Offsets: (28, 25)
+			Locked Center Offsets: (50, 52)			
+		+Messages: 
+			Origin: (0.5, 0.2)
+			Offset: (-170, 0)
+			Font: font_hud_message
+			Slew: NO ;; messages
+			Max Lines: 10
+			Max Width: 460
+			Line Height: 16
+			Total Lifetime: 6000
+			Hidden By Comms Menu: NO
+		+Custom:
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_title
+			Name: CustomMessage_Frame
+			Text: Incoming transmission	
+			X Offset: 10
+			Y Offset: 8
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_message
+		+Custom:
+			Origin: (0.5, 0.17)
+			Offset: (-310, 0)
+			Font: font_hud_message
+			Name: CustomMessage_Body
+			Text: Message decoding
+			X Offset: 10
+			Y Offset: 34
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Training Messages: 
+			Origin: (0.5, 0.5)
+			Offset: (-133, -150)
+			Font: font_hud_message
+			Slew: NO ;; messages
+		+Multiplayer Messages:
+			Origin: (0.5, 0.5)
+			Offset: (-220, -120)
+			Font: font_hud_title
+			Slew: NO ;; messages
+		+Fixed Messages:
+			Origin: (0.5, 0.5)
+			Offset: (0, 20)
+			Slew: NO ;; messages
+			Center Text On Gauge X-Position: true
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-100, 100)
+			Font: font_hud_message
+			Name: ExtraInfo_Frame
+			Text: Aquiring Signal	
+			X Offset: 7
+			Y Offset: 4
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_i_frame
+		+Custom:
+			Origin: (0.5, 0.5)
+			Offset: (-100, 120)
+			Font: font_hud_message
+			Name: ExtraInfo_Body
+			Text: Updating Signal
+			X Offset: 7
+			Y Offset: 2
+			Gauge Type: MESSAGE_LINES
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Support: 
+			Origin: (0.75, 0)
+			Offset: (-60, 10)
+			Slew: NO ;; messages
+			Filename: 2_support1
+			Header Offsets: (4, 3)
+			Text Y-offset: 20
+			Dock Status X-offset: 6
+			Dock Time X-offset: 65
+			Enable Rearm Timer: YES
+
+		+Damage: 
+			Origin: (0.5, 0.0)
+			Offset: (-119, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_damage1
+			Entry Background Filename: 2_damage2
+			Bottom Background Filename: 2_damage3
+			Header Offsets: (4, 3)
+			Hull Integrity Offsets: (6, 20)
+			Hull Integrity Value X-offset: 230
+			Top Background Height: 32
+			Subsystem Entry Height: 14
+			Subsystem List Start Offsets: (6, 35)
+			Subsystem Entry Value X-offset: 230
+
+		+Directives: 
+			Origin: (0.0, 0.0)
+			Offset: (10, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_directives1
+			Entry Background Filename: 2_directives2
+			Bottom Background Filename: 2_directives3
+			Header Offsets: (4, 4)
+			Top Background Height: 20
+			List Start Offsets: (6, 21)
+			Entry Height: 14
+			Max Line Width: 238 ;248
+			Key Line X Offset: 8
+		+Custom:
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Frame
+			Text: Squadron Roles
+			X Offset: 5
+			Y Offset: 6
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_roles
+		+Custom:
+			Origin: (0.2, 0.0)
+			Offset: (0, 10)
+			Name: CustomRoleGauge_Body
+			Text: Assignments
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Objective Notify: 
+			Origin: (0.5, 0.5)
+			Offset: (-119, 50)
+			Slew: NO ;; messages
+			Filename: 2_objectives1
+			Objective Text Y-offset: 5
+			Objective Value Y-offset: 17
+			Subspace Text Y-offset: 5
+			Subspace Value Y-offset: 17
+			Red Alert Text Y-offset: 5
+			Red Alert Value Y-offset: 17
+		+Squad Message: 
+			Origin: (1.0, 0.0)
+			Offset: (-266, 10)
+			Slew: NO ;; messages
+			Top Background Filename: 2_messages1
+			Entry Background Filename: 2_messages2
+			Bottom Background Filename: 2_messages3
+			Header Offsets: (5, 4)
+			List Start Offsets: (3, 21)
+			Top Background Height: 20
+			Entry Height: 17
+			Command X-offset: 22
+			Page Up Offsets: (110, 5)
+			Page Down Offsets: (110, 5)
+			Ship Name Max Width: 217
+		+Escort View: 
+			Origin: (0.0, 0.23778)
+			Offset: (10, 0)
+			Slew: NO ;; messages
+			Top Background Filename: 2_escort1
+			Entry Background Filename: 2_escort2
+			Bottom Background Filename: 2_escort3
+			Entry Height: 14
+			Header Text: 优先
+			Header Offsets: (4, 4)
+			List Start Offsets: (0, 21)
+			Hull X-offset: 208
+			Name X-offset: 6
+			Status X-offset: 170
+			Ship Name Max Width: 160
+		+Text Warnings: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 20)
+			Font: font_hud_warning
+			Slew: NO ;; messages
+		+Mini Target Shields:
+			Origin: (0.5, 0.5)
+			Offset: (-16, 78)
+			Slew: YES ;; center
+			Filename: 2_hit1-blank
+			3 Digit Hull Offsets: (6, 7)
+			2 Digit Hull Offsets: (10, 7)
+			1 Digit Hull Offsets: (14, 7)
+		+Voice Status: 
+			Origin: (0.00833, 0.21444)
+			Offset: (0, 0)
+		+Ping: 
+			Origin: (0.78403, 0.00667)
+			Offset: (0, 0)
+		+Lag:
+			Origin: (0.5, 0.5)
+			Offset: (-24, 145)
+			Slew: NO ;; messages
+			Filename: 2_netlag1
+		+Supernova: 
+			Origin: (0.0, 0.22)
+			Offset: (0, 0)
+		+Target Brackets: 			; Target Brackets, Lock Indicator, Lead Indicator, and Offscreen Indicator don't need a 'Position:' field.
+			Dot Filename: 2_attacker1
+			Enable Target Info: YES
+		+Lead Indicator:
+			Filename: 2_lead1
+			;Center Offsets: (13, 13)		
+		+Offscreen Indicator:
+		+Hostile Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Target Triangle: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Missile Triangles: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Slew: YES ;; center
+			Radius: 135
+			Triangle Base: 6.5
+			Triangle Height: 13.0
+		+Orientation Tee: 
+			Origin: (0.5, 0.5)
+			Offset: (0, 0)
+			Radius: 123
+		;
+		; BF2 Assault Mission Gauges
+		+Custom: ;AssaultStatusBoardingFrame
+			Origin: (0.01, 0.4)
+			Offset: (0, 10)
+			Name: BoardingMonitorFrame
+			Text: 
+			X Offset: 5
+			Y Offset: 6
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_roles
+		+Custom: ;AssaultStatusBoardingBody
+			Origin: (0.01, 0.4)
+			Offset: (0, 10)
+			Name: BoardingMonitorBody
+			Text: 
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Active by default: NO
+			Filename: 2_custom_text
+		+Custom: ;AssaultStatusFriendly
+			Origin: (0.02, 0.0)
+			Offset: (0, 0)
+			Color: (60, 255, 60)
+			Font: font_julia
+			Name: AssaultStatusFriendly
+			Text: 0
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Custom: ;AssaultStatusHostile
+			Origin: (0.02, 0.09)
+			Offset: (0, 0)
+			Color: (255, 60, 60)
+			Font: font_julia
+			Name: AssaultStatusHostile
+			Text: 0
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Custom: ;AssaultScoreFriendly
+			Origin: (0.309, 0.06)
+			Offset: (0, 10)
+			Color: (75, 106, 255)
+			Font: font_julia
+			Name: AssaultScoreFriendly
+			Text: 0
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Custom: ;AssaultScoreHostile
+			Origin: (0.65, 0.06)
+			Offset: (0, 10)
+			Color: (255, 60, 60)
+			Font: font_julia
+			Name: AssaultScoreHostile
+			Text: 0
+			X Offset: 5
+			Y Offset: 26
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+		+Custom: ;AssaultOutcome
+			Position: (0, 0)
+			Font: font_miloner
+			Name: AssaultOutcome
+			Text: 
+			X Offset: 0
+			Y Offset: 0
+			Gauge Type: DIRECTIVES_VIEW
+			Slew: NO ;; messages
+			Config: NO ;; custom
+			Active by default: NO
+			Filename: 2_custom_text
+	$End Gauges
+#End
+
+#Gauge Config	;; Ships with Secondaries (Weapons)
+	$Name: HUD_Chase_Common_YesSecondaries
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Weapons: 
+			Origin: (1.0, 1.0)
+			Offset: (-221, -165)
+            Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1
+			Primary List Middle Background Filename: 2_weapons2
+			Primary List Bottom Background Filename: 2_weapons2
+			Secondary List Top Background Filename:  2_weapons3
+			Secondary List Entry Background Filename: 2_weapons4
+			Secondary List Bottom Background Filename: 2_weapons5
+			Header Offsets: (40, 4)
+			Top Primary Background X-offset: 23
+			Text X-offset: 4
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 38
+			Primary Weapon Name X-offset: 51
+			Secondary Weapon Ammo X-offset: 31
+			Secondary Weapon Unlinked X-offset: 39
+			Secondary Weapon Linked X-offset: 33
+			Secondary Weapon Name X-offset: 50
+			Secondary Weapon Reload X-offset: 188
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Ships without secondaries (Weapons)
+	$Name: HUD_Chase_Common_NoSecondaries
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Weapons: 
+			Origin: (1.0, 1.0)
+			Offset: (-221, -165)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons5_cp
+			Secondary List Entry Background Filename: 2_weapons_blank ;2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons_blank ;2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 23
+			Secondary List Start Y-offset: 9999
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 14
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 15
+			Secondary Weapon Linked X-offset: 8
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Rebel/Pirate Default (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_XwingZ95_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 6
+			Firepoint Y coordinate multiplier: 4
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; ZTI-Wing (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_ZTIwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 10
+			Firepoint Y coordinate multiplier: 10
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; ARC 170 (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_ARC170_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 3
+			Firepoint Y coordinate multiplier: 8
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; A-Wing (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_Awing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 10
+			Firepoint Y coordinate multiplier: 1
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; B-wing (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_Bwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 6
+			Firepoint Y coordinate multiplier: 2
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; N-1 (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_N1_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 48
+			Firepoint Y coordinate multiplier: 1
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Y-wing (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_Ywing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 40
+			Firepoint Y coordinate multiplier: 24
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; ZY-wing (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_ZYwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_A
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 38
+			Firepoint Y coordinate multiplier: 10
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Cloakshape (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_Cloakshape_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		;; RTT End
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_B
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 0
+			Firepoint Y coordinate multiplier: 35
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Vulture and V-wing (Radar, Center Recticle, Target Monitor)
+	$Name: HUD_Chase_VulVwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (186, 83)
+			Name Offsets: (14, -4)
+			Class Offsets: (14, 11)
+			Distance Offsets: (14, 29)
+			Speed Offsets: (92, 29)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (13, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (4, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		;; RTT End
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_B
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 10
+			Firepoint Y coordinate multiplier: 35
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; Imperial Default (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_TIEFighter_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR2
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1b
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, -3)
+			Class Offsets: (12, 12)
+			Distance Offsets: (12, 30)
+			Speed Offsets: (90, 30)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_B
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 10
+			Firepoint Y coordinate multiplier: 16
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+#End
+
+#Gauge Config	;; TIE Bomber (Radar, Center Reticle, Target Monitor)
+	$Name: HUD_Chase_TIEBomber_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Radar: 
+			Origin: (0.5, 1.0)
+			Offset: (-104, -180)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR2
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0.0, 1.0)
+			Offset: (10, -260)
+			Cockpit View Choice: cockpitinactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1b
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, -3)
+			Class Offsets: (12, 12)
+			Distance Offsets: (12, 30)
+			Speed Offsets: (90, 30)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		;; RTT End
+
+		+Center Reticle: 
+			Origin: (0.5, 0.5)
+			Offset: (-20, -12)
+			Filename: 2_reticle_B
+			Firepoint display: YES
+			Firepoint size: 4
+			Firepoint X coordinate multiplier: 0
+			Firepoint Y coordinate multiplier: 22
+			Autoaim Frame: 1
+			Flight Cursor Frame: 2
+
+	$End Gauges
+
+#End
+
+;; Rebel/Pirate Cockpits ==============================================================================================================================
+
+#Gauge Config   ;; B-wings
+	$Name: HUD_Cockpit_Bwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:		
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (763, 781)
+			Display Size: (239, 218)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (16, 16)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (160, 133)
+			Display Offset: (28, 567)
+			Display Size: (230, 159)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (475, 781)
+			Display Size: (281, 255)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (38, 100)
+			Display Offset: (903, 29)
+			Display Size: (92, 242)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (6, 90)
+			Always Show Text: yes
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (905, 317)
+			Display Size: (92, 242)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (65, 150)
+			Display Offset: (76, 843)
+			Display Size: (97, 225)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 40)
+			Lock Offsets: (0, 3)
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (438, 66)
+			Display Size: (401, 339)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (730, 647)
+			Display Size: (110, 56)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (879, 647)
+			Display Size: (110, 56)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (527, 513)
+			Display Size: (128, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (128, 19)
+			Display Offset: (465, 474)
+			Display Size: (256, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (155, 93) ;221, 68
+			Display Offset: (266, 581)
+			Display Size: (400, 190)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (301, 816)
+			Display Size: (45, 179)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (348, 816)
+			Display Size: (45, 179)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (396, 816)
+			Display Size: (45, 179)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (39, 22)
+			Display Size: (336, 418)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: bwing_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (34, 445)
+			Display Size: (230, 72)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 4)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End	
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; A-wings and Cloakshape (same as V-wing except for a few things)
+	$Name: HUD_Cockpit_Awing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (879, 35)
+			Display Size: (124, 63)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (879, 117)
+			Display Size: (124, 63)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (654, 27)
+			Display Size: (122, 36)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (128, 19)
+			Display Offset: (600, 62)
+			Display Size: (243, 36)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (155, 81) ;221, 68
+			Display Offset: (569, 97)
+			Display Size: (294, 154)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+		;;
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (660, 258)
+			Display Size: (285, 235)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (49, 820)
+			Display Size: (157, 130)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (771, 788)
+			Display Size: (252, 209)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (38, 100)
+			Display Offset: (484, 281)
+			Display Size: (60, 333)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (1054, 1048) ;;hide so it never shows up
+			Always Show Text: Yes ;;even with NO text will show up if low energy
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (289, 760)
+			Display Size: (92, 242)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 150)
+			Display Offset: (23, 34)
+			Display Size: (97, 225)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 43)
+			Lock Offsets: (0, 0)
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (431, 694)
+			Display Size: (328, 267)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (777, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (863, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (949, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (26, 265)
+			Display Size: (404, 485)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (27, 202)
+			Display Size: (258, 70)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 0)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; V-wing (same as A-wing except for a few things)
+	$Name: HUD_Cockpit_Vwing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (879, 41)
+			Display Size: (124, 63)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (879, 120)
+			Display Size: (124, 63)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (740, 35)
+			Display Size: (122, 36)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (77, 19)
+			Display Offset: (590, 35)
+			Display Size: (146, 36)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time_b
+			Text Offsets: (6, 5)
+			Value Offsets: (48, 5)
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (155, 81) ;221, 68
+			Display Offset: (575, 73)
+			Display Size: (294, 154)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+		;
+		;
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (660, 258)
+			Display Size: (285, 235)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (49, 820)
+			Display Size: (157, 130)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (771, 788)
+			Display Size: (252, 209)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (38, 100)
+			Display Offset: (484, 281)
+			Display Size: (60, 333)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (1054, 1048) ;;hide so it never shows up
+			Always Show Text: Yes ;;even with NO text will show up if low energy
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (289, 760)
+			Display Size: (92, 242)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (65, 150)
+			Display Offset: (23, 34)
+			Display Size: (97, 225)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 43)
+			Lock Offsets: (0, 0)
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (431, 694)
+			Display Size: (328, 267)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (777, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (863, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (949, 523)
+			Display Size: (57, 228)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (26, 265)
+			Display Size: (404, 485)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: awing_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (27, 202)
+			Display Size: (258, 70)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 0)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; Y-wings and Long-probes
+	$Name: HUD_Cockpit_Ywing_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (526, 36)
+			Display Size: (230, 189)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (893, 515)
+			Display Size: (71, 187)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (2, 65)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (150, 33)
+			Display Offset: (813, 329)
+			Display Size: (225, 50)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FH
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 0)
+			Lock Offsets: (65, 0) ;used to be 65
+
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (538, 862)
+			Display Size: (77, 23)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (15, 36)
+			Display Size: (456, 355)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (732, 515)
+			Display Size: (78, 40)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (810, 515)
+			Display Size: (78, 40)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (155, 81) ;221, 68
+			Display Offset: (520, 281)
+			Display Size: (234, 104)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 25
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (773, 32)
+			Display Size: (254, 211)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (82, 824)
+			Display Size: (157, 130)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (54, 100)
+			Display Offset: (538, 518)
+			Display Size: (101, 187)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_b
+			Foreground Clip Height: 85
+			Text Offsets: (6, 90)
+			Always Show Text: yes
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (732, 556)
+			Display Size: (38, 150)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (790, 556)
+			Display Size: (38, 150)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (849, 556)
+			Display Size: (38, 150)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (77, 19)
+			Display Offset: (530, 773)
+			Display Size: (92, 23)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time_b
+			Text Offsets: (6, 5)
+			Value Offsets: (48, 5)
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (63, 530)
+			Display Size: (340, 204)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: ywing_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (63, 496)
+			Display Size: (168, 37)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 0)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; N-1s
+	$Name: HUD_Cockpit_N1_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (378, 420)
+			Display Size: (269, 214)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (40, 123)
+			Display Size: (250, 207)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (734, 171)
+			Display Size: (250, 208)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (38, 100)
+			Display Offset: (495, 680)
+			Display Size: (60, 333)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (1054, 1048) ;;hide so it never shows up
+			Always Show Text: Yes ;;even with NO text will show up if low energy
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (723, 670)
+			Display Size: (92, 242)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (4, 65)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (150, 33)
+			Display Offset: (816, 868)
+			Display Size: (216, 47)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FH
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 0)
+			Lock Offsets: (65, 0) ;used to be 65
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (330, 58)
+			Display Size: (363, 295)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (70, 895)
+			Display Size: (130, 66)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (203, 895)
+			Display Size: (130, 66)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (24, 963)
+			Display Size: (128, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (128, 19)
+			Display Offset: (152, 963)
+			Display Size: (256, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (200, 68)
+			Display Offset: (702, 84)
+			Display Size: (313, 106)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp-T
+			Primary List Middle Background Filename: 2_weapons_blank-T
+			Primary List Bottom Background Filename: 2_weapons2_blank-T
+			Secondary List Top Background Filename:  2_weapons3_cp-T
+			Secondary List Entry Background Filename: 2_weapons_blank-T
+			Secondary List Bottom Background Filename: 2_weapons5_cp-T
+			Header Offsets: (40, 4); (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 40 ;16
+			Primary Weapon Name X-offset: 53; 28
+			Secondary Weapon Ammo X-offset: 155 ;128
+			Secondary Weapon Unlinked X-offset: 40 ;16
+			Secondary Weapon Linked X-offset: 34 ;10
+			Secondary Weapon Name X-offset: 53 ;28
+			Secondary Weapon Reload X-offset: 175 ;137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (818, 657)
+			Display Size: (49, 196)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (879, 657)
+			Display Size: (49, 196)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (940, 657)
+			Display Size: (49, 196)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (25, 469)
+			Display Size: (271, 316)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: n1_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (60, 88)
+			Display Size: (211, 51)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 3)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; ARCs and X-wing family (Z-95, etc) minus secondary weapon gauge
+	$Name: HUD_Cockpit_XwingFamily_Common
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (268, 419)
+			Display Size: (220, 174)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (73, 110)
+			Display Offset: (700, 685)
+			Display Size: (146, 220)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle2
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 27
+			Max Speed Label Offsets: (4, 18)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (48, 92)
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (65, 150)
+			Display Offset: (91, 187)
+			Display Size: (72, 165)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FV
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (0, 45)
+			Lock Offsets: (0, 0)
+
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (219, 70)
+			Display Size: (96, 28)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (378, 697)
+			Display Size: (259, 211)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR1
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (221, 256)
+			Display Size: (88, 44)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (221, 162)
+			Display Size: (88, 44)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+	
+		; Weaopons are different between ARCs and X-wing family
+
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (818, 397)
+			Display Size: (184, 192)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (49, 442)
+			Display Size: (168, 141)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (54, 100)
+			Display Offset: (890, 715)
+			Display Size: (90, 166)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_b
+			Foreground Clip Height: 85
+			Text Offsets: (6, 90)
+			Always Show Text: yes
+
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (719, 417)
+			Display Size: (41, 170)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (625, 417)
+			Display Size: (41, 170)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (7, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (540, 417)
+			Display Size: (41, 170)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (6, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (77, 19)
+			Display Offset: (760, 109)
+			Display Size: (115, 28)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time_b
+			Text Offsets: (6, 5)
+			Value Offsets: (48, 5)
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (227, 282)
+			Display Offset: (25, 688)
+			Display Size: (299, 243)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1a
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (172, 42)
+			Display Offset: (40, 418)
+			Display Size: (172, 42)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 2)
+			Dock Offsets: (12, 26)
+			Dock Max Width: 159;
+			Order Offsets: (12, 0)
+			Order Max Width: 159;
+			Time Offsets: (12, 13)
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; ARCs (same as X-wing family, but larger secondary weapon gauge)
+	$Name: HUD_Cockpit_ARC170_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (155, 85)
+			Display Offset: (751, 190)
+			Display Size: (191, 84)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config   ;; X-wing family (Z-95, etc) (same as ARCs but small seconday weapon gauge)
+	$Name: HUD_Cockpit_XwingZ95_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+		;; RTT Start
+
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: xwing_HUD
+			Canvas Size: (155, 68)
+			Display Offset: (751, 200)
+			Display Size: (191, 84)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+
+		;; RTT End
+
+	$End Gauges
+#End
+
+;; Imperial Cockpits ==============================================================================================================================
+
+#Gauge Config	;; TIEs with shields 
+	$Name: HUD_Cockpit_TIEShielded_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (130, 132)
+			Display Size: (45, 181)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (130, 320)
+			Display Size: (45, 181)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (26, 173)
+			Display Size: (53, 301)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (5, 67)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+		;;RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config	;; TIEs without shields 
+	$Name: HUD_Cockpit_TIEUnshielded_Specific
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+ETS Engines: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (126, 173)
+			Display Size: (53, 301)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)	
+
+		+ETS Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (1024, 1024)
+			Display Size: (53, 301)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (8, 69)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+
+		+ETS Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (20, 80)
+			Display Offset: (26, 173)
+			Display Size: (53, 301)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy1
+			Foreground Clip Height: 66
+			Letter Offsets: (5, 67)
+			;Top Offsets: (0, 0)
+			Bottom Offsets: (0, 200)
+		;;RTT End
+
+	$End Gauges
+#End
+
+#Gauge Config	;; All TIEs
+	$Name: HUD_Cockpit_TIEFamily_Common
+	$Show in HUD Config: NO
+	$Base: (1600, 900)
+	;$Min: (1024, 768)					; These Min and Max fields are Inclusive and optional. 
+	$Gauges:
+
+		;; RTT Start
+		+Weapons: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (155, 80) ;221, 68
+			Display Offset: (495, 655)
+			Display Size: (255, 132)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Primary List Top Background Filename: 2_weapons1_cp
+			Primary List Middle Background Filename: 2_weapons2_cp
+			Primary List Bottom Background Filename: 2_weapons2_cp
+			Secondary List Top Background Filename:  2_weapons3_cp
+			Secondary List Entry Background Filename: 2_weapons4_cp
+			Secondary List Bottom Background Filename: 2_weapons5_cp
+			Header Offsets: (10, 4)
+			Top Primary Background X-offset: 5
+			Text X-offset: 5
+			Top Primary Frame Height: 33
+			Top Secondary Frame Height: 12
+			Primary List Start Y-offset: 21
+			Secondary List Start Y-offset: 6
+			;Primary Weapon Ammo X-offset: 28
+			Primary Weapon Link X-offset: 16
+			Primary Weapon Name X-offset: 28
+			Secondary Weapon Ammo X-offset: 128
+			Secondary Weapon Unlinked X-offset: 16
+			Secondary Weapon Linked X-offset: 10
+			Secondary Weapon Name X-offset: 28
+			Secondary Weapon Reload X-offset: 137
+			Primary Weapon Entry Height: 14
+			Secondary Weapon Entry Height: 14
+		+Player Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (472, 38)
+			Display Size: (184, 153)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+		;+Countermeasures:
+			;Origin: (1.0, 1.0)
+			;Offset: (-120, -180)
+			;;Slew: NO ;; rtt
+			;Filename: 2_countermeasure1
+			;Text Offsets: (25, 8)
+			;Value Offsets: (5, 8)
+
+		+Throttle: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (42, 110)
+			Display Offset: (406, 796)
+			Display Size: (71, 186)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_throttle
+			Foreground Clip Bottom Y-offset: 110
+			Foreground Clip Width: 45
+			Foreground Clip Height: 81
+			Afterburner Clip Height: 26
+			Max Speed Label Offsets: (4, 14)
+			Min Speed Label Offsets: (42, 97)
+			Show Min Speed Label: NO
+			Orbit Center Offsets: (0, 105)
+			Orbit Radius: 1
+			Current Speed Offsets: (29, 95)
+			Match Speed Status Offsets: (4, 65)
+
+		+Weapon Energy: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (38, 100)
+			Display Offset: (410, 661)
+			Display Size: (65, 152)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_energy2_a
+			Foreground Clip Height: 85
+			Text Offsets: (1054, 1048) ; hide since text ends up being too small, and blank space helps separate gauges
+			Always Show Text: yes
+
+		+Radar: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (209, 170)
+			Display Offset: (664, 110)
+			Display Size: (350, 285)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_RADAR2
+			Radar Center Offsets: (104, 85)
+			Radar Size: (192, 160)
+			Infinity Distance Offsets: (13, 148)
+			Long Distance Offsets: (6, 148)
+			Short Distance Offsets: (10, 148)
+
+		+Target Monitor: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (219, 250)
+			Display Offset: (44, 655)
+			Display Size: (297, 326)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Monitor Filename: 2_targetview1b
+			Integrity Bar Filename: 2_targetview2
+			Viewport Offsets: (4, 68)
+			Viewport Size: (207, 178)
+			Integrity Bar Offsets: (211, 82)
+			Integrity Bar Foreground Clip Height: 154
+			Status Offsets: (180, 84)
+			Name Offsets: (12, 3)
+			Class Offsets: (12, 17)
+			Distance Offsets: (12, 35)
+			Speed Offsets: (90, 35)
+			Hull Offsets: (214, 69)
+			Cargo Contents Offsets: (12, 50)
+			Cargo Scan Type: dualscanlines
+			Cargo Scan Start Offsets: (3, 68)
+			Cargo Scan Size: (207, 178)
+			Subsystem Name Offsets: (6 253)
+			Subsystem Integrity Offsets: (210 253)
+			Disabled Status Offsets: (4 71)
+
+		+Extra Target Data:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (185, 42)
+			Display Offset: (348, 535)
+			Display Size: (300, 64)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_targetview3
+			Bracket Offsets: (0, 3)
+			Dock Offsets: (12, 29)
+			Dock Max Width: 170;
+			Order Offsets: (12, 0)
+			Order Max Width: 170;
+			Time Offsets: (12, 15)
+
+		+Target Shields: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (112, 93)
+			Display Offset: (265, 38)
+			Display Size: (184, 153)			
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+
+		+Threat Indicator: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (150, 33)
+			Display Offset: (285, 471)
+			Display Size: (254, 56)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Arc Filename: 2_threat_FH
+			Dumbfire Filename: 2_threat_laser ;laser warning
+			Lock Filename: 2_threat_warhead ;warhead warning
+			Dumbfire Offsets: (68, 0)
+			Lock Offsets: (0, 0)
+
+		+Auto Target:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (518, 470)
+			Display Size: (111, 56)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Target Offsets: (12, 20)	
+
+		+Auto Speed:
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (65, 33)
+			Display Offset: (643, 470)
+			Display Size: (111, 56)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_toggle1
+			Auto Offsets: (18, 6)
+			Speed Offsets: (13, 20)
+
+		+Wingman Status: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (168, 130)
+			Display Offset: (496, 789)
+			Display Size: (257, 192)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Left Background Filename:		2_wingman_left
+			Entry Background Filename:		2_wingman_entry
+			Right Background Filename:		2_wingman_right
+			Dot Filename:					2_wingmen-dots_circle
+			Header Offsets:					(5, 4)
+			Left Background Width:			20
+			Entry Width:					20
+			Last Background Offset:			-16
+			Single Wing Offsets:			(0, 26)
+			Multiple Wing Start Offsets:	(0, 26)
+			Wing Name Offsets:				(5, 0)
+			Dot Offsets:					(75, 0) (90, 0) (105, 0) (120, 0) (135, 0) (150, 0)
+			Expansion Mode: 				Down
+			Wingname Align Mode:            Left
+			Use Full Wing Names:			YES
+			Use Expanded Colors:			YES
+
+		+Mission Time: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (128, 19)
+			Display Offset: (322, 432)
+			Display Size: (256, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_time1
+			Text Offsets: (6, 5)
+			Value Offsets: (81, 5)
+
+		+Kills: 
+			Origin: (0, 0)
+			Offset: (0, 0)
+			Cockpit Target: tie_HUD
+			Canvas Size: (64, 19)
+			Display Offset: (586, 432)
+			Display Size: (128, 38)
+			Cockpit View Choice: cockpitactive
+			Slew: NO ;; rtt
+			Filename: 2_kills1
+			Text Offsets: (4, 5)
+			Value Offsets: (59, 5)
+
+		;;RTT End
+
+	$End Gauges
+#End	
+
