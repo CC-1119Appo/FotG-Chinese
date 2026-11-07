@@ -1,0 +1,93 @@
+;; text file to contain medal information.  Does not include "rank" medals (see rank.tbl for those).
+;; medal names and which bitmap(s) are used to display them.
+
+#Medals
+
+$Name:		同盟胜利徽章
+$Bitmap:		Medal00.pcx
+$Num mods:	4
+
+$Name:		秩序纹章
+$Bitmap:		Medal01.pcx
+$Num mods:	4
+
+$Name:		卡利多尔新月章
+$Bitmap:		Medal02.pcx
+$Num mods:	4
+
+$Name:		曼图因奖章
+$Bitmap:		Medal03.pcx
+$Num mods:	4
+
+$Name:		科雷利亚十字勋章
+$Bitmap:		Medal04.pcx
+$Num mods:	4
+
+$Name:		奥德朗之星
+$Bitmap:		Medal05.pcx
+$Num mods:	4
+
+$Name:		佩勒米亚战役徽章
+$Bitmap:		Medal06.pcx
+$Num mods:	4
+
+$Name:		比尔布林吉战役徽章
+$Bitmap:		Medal07.pcx
+$Num mods:	4
+
+$Name:		阿诺阿特战役徽章
+$Bitmap:		Medal08.pcx
+$Num mods:	4
+
+$Name:		科雷利亚战役徽章
+$Bitmap:		Medal09.pcx
+$Num mods:	4
+
+$Name:		企业星区战役徽章
+$Bitmap:		Medal10.pcx
+$Num mods:	4
+
+$Name:		科洛桑战役徽章
+$Bitmap:		Medal11.pcx
+$Num mods:	4
+
+$Name:		Rank
+$Bitmap:		Medal12.pcx
+$Num mods:	10
+
+$Name:		恩多战役徽章
+$Bitmap:		Medal13.pcx
+$Num mods:	2
+
+$Name:		王牌勋章
+$Bitmap:		Medal14.pcx
+$Num mods:	1
++Num Kills:	5
+$Wavefile Base: advance_def.ogg
+$Promotion Text:
+XSTR("Five confirmed kills makes you an Ace.  Nice flying, Pilot.", 167)
+$end_multi_text
+
+$Name:		乌索尔勋章
+$Bitmap:		Medal15.pcx
+$Num mods:	1
++Num Kills:	25
+$Wavefile Base: advance_def.ogg
+$Promotion Text:
+XSTR("Your impressive record of confirmed kills has earned you the right to wear the Usor Cluster.", 168)
+$end_multi_text
+
+$Name:		伯丁勋章
+$Bitmap:		Medal16.pcx
+$Num mods:	1
++Num Kills:	125
+$Wavefile Base: advance_def.ogg
+$Promotion Text:
+XSTR("For your truly outstanding record of confirmed kills, you have been awarded the Burdine Cluster.", 169)
+$end_multi_text
+
+$Name:		英勇勋章
+$Bitmap:		Medal17.pcx
+$Num mods:	1
+
+#End
