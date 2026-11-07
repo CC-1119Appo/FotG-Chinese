@@ -1,0 +1,368 @@
+#Primary Weapons
+
+$Name: T&B KX-5#Red
++nocreate
+$Display Name: KX-5 激光炮
+
+$Name: T&B KX-5#Grn
++nocreate
+$Display Name: KX-5 激光炮
+
+$Name: T&B KX-9
++nocreate
+$Display Name: KX-9 激光炮
+
+$Name: T&B IX4#Red
++nocreate
+$Display Name: IX4 激光炮
+
+$Name: T&B IX4#Grn
++nocreate
+$Display Name: IX4 激光炮
+
+$Name: Gyrhil R-9X
++nocreate
+$Display Name: R-9X 激光炮
+
+$Name: Borstel RG-9
++nocreate
+$Display Name: RG-9 激光炮
+
+$Name: T&B IX9
++nocreate
+$Display Name: IX9 激光炮
+
+$Name: T&B KT6#Olv
++nocreate
+$Display Name: KT6 爆能炮
+
+$Name: T&B KT6#Yel
++nocreate
+$Display Name: KT6 爆能炮
+
+$Name: T&B KT6#Orn
++nocreate
+$Display Name: KT6 爆能炮
+
+$Name: Gyrhil 72
++nocreate
+$Display Name: 72 爆能炮
+
+$Name: SFS L-s1
++nocreate
+$Display Name: L-s1 激光炮
+
+$Name: SFS L-s7.2
++nocreate
+$Display Name: L-s7.2 激光炮
+
+$Name: SFS L-s9.3
++nocreate
+$Display Name: L-s9.3 激光炮
+
+$Name: SFS L-s1 (Burst)
++nocreate
+$Display Name: L-s1 激光炮
+
+$Name: SFS L-s7.2 (Burst)
++nocreate
+$Display Name: L-s7.2 激光炮
+
+$Name: SFS L-s9.3 (Burst)
++nocreate
+$Display Name: L-s9.3 激光炮
+
+$Name: T&B MS-1
++nocreate
+$Display Name: MS-1 激光炮
+
+$Name: T&B FF-4
++nocreate
+$Display Name: FF-4 爆能炮
+
+$Name: ArMek SW-4
++nocreate
+$Display Name: SW-4 离子炮
+
+$Name: ArMek SW-7a
++nocreate
+$Display Name: SW-7a 离子炮
+
+$Name: SFS L-s8.1
++nocreate
+$Display Name: L-s8.1 离子炮
+
+$Name: SFS L-s8.1 (Burst)
++nocreate
+$Display Name: L-s8.1 离子炮
+
+$Name: Borstel NK-3
++nocreate
+$Display Name: NK-3 离子炮
+
+$Name: T&B KX-4#Red
++nocreate
+$Display Name: KX-4 激光炮
+
+$Name: T&B KX-4#Grn
++nocreate
+$Display Name: KX-4 激光炮
+
+$Name: CEC AG-2G
++nocreate
+$Display Name: AG-2G 激光炮
+
+$Name: Manual control
++nocreate
+$Display Name: 阿尔
+
+$Name: Mixed control
++nocreate
+$Display Name: AG-2G 激光炮
+
+$Name: Gunner control
++nocreate
+$Display Name: 炮手
+
+$Name: Silent Turret
++nocreate
+$Display Name: 伊伦
+
+$Name: DKT Repair Gun
++nocreate
+$Display Name: DKT 维修枪
+
+$Name: Detonation#250m
++nocreate
+$Display Name: 蒂昂
+
+$Name: Detonation#100m
++nocreate
+$Display Name: 蒂昂
+
+$Name: Turbo_TechEntry
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Lgt#Red
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Lgt#Grn
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Ion_Lgt#Yel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Ion_Lgt#Tel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Laser_Med#Red
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Med#Grn
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Ion_Med#Yel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Ion_Med#Tel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Laser_Hvy#Red
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Hvy#Grn
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Ion_Hvy#Yel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Ion_Hvy#Tel
++nocreate
+$Display Name: 离子炮
+
+$Name: Turbo_Laser_Sup#Red_8
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Grn_8
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Red_Sml8
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Grn_Sml8
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Red_18
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Grn_18
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Red_40
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: Turbo_Laser_Sup#Grn_40
++nocreate
+$Display Name: 涡轮激光炮
+
+$Name: NULL Laser
++nocreate
+$Display Name: NULL 激光炮
+
+#End
+
+#Secondary Weapons
+
+$Name: Arakyd ST2#Orn
++nocreate
+$Display Name: ST2 导弹
+
+$Name: Arakyd ST2#Blu
++nocreate
+$Display Name: ST2 导弹
+
+$Name: Krupx MG5#Orn
++nocreate
+$Display Name: MG5 导弹
+
+$Name: Krupx MG5#Blu
++nocreate
+$Display Name: MG5 导弹
+
+$Name: Dymek HM-6#Orn
++nocreate
+$Display Name: HM-6 导弹
+
+$Name: Dymek HM-6#Blu
++nocreate
+$Display Name: HM-6 导弹
+
+$Name: Dymek HM-6a#Orn
++nocreate
+$Display Name: HM-6a 导弹
+
+$Name: Dymek HM-6a#Blu
++nocreate
+$Display Name: HM-6a 导弹
+
+$Name: Krupx MG7-A#Pnk
++nocreate
+$Display Name: MG7-A 鱼雷
+
+$Name: Krupx MG7-A#Blu
++nocreate
+$Display Name: MG7-A 鱼雷
+
+$Name: Krupx VL-4a#Blu
++nocreate
+$Display Name: VL-4a 弹头
+
+$Name: Krupx VL-4a#Orn
++nocreate
+$Display Name: VL-4a 弹头
+
+$Name: Arakyd ADM-77
++nocreate
+$Display Name: ADM-77 弹头
+
+$Name: Dymek HM-8#Pnk
++nocreate
+$Display Name: HM-8 鱼雷
+
+$Name: Dymek HM-8#Blu
++nocreate
+$Display Name: HM-8 鱼雷
+
+$Name: Frei-Tek MAG-2#Yel
++nocreate
+$Display Name: MAG-2
+
+$Name: Frei-Tek MAG-2#Tel
++nocreate
+$Display Name: MAG-2
+
+$Name: Frei-Tek IR-4#Pur
++nocreate
+$Display Name: IR-4 离子炮
+
+$Name: Frei-Tek IR-4#Red
++nocreate
+$Display Name: IR-4 离子炮
+
+$Name: Merr-Sonn NG2#Wht
++nocreate
+$Display Name: NG2 火箭弹
+
+$Name: Merr-Sonn NG2#Yel
++nocreate
+$Display Name: NG2 火箭弹
+
+$Name: S-K INTR#Red
++nocreate
+$Display Name: INTR 火箭弹
+
+$Name: S-K INTR#Blu
++nocreate
+$Display Name: INTR 火箭弹
+
+$Name: ArmaTek VL-61/79#Cyn
++nocreate
+$Display Name: VL-61/79 炸弹
+
+$Name: ArmaTek VL-61/79#Pnk
++nocreate
+$Display Name: VL-61/79 炸弹
+
+$Name: S-1 Seismic Charge
++nocreate
+$Display Name: S-1 震荡炸弹
+
+$Name: Seismic_Shockwave
++nocreate
+$Display Name: S-1
+
+$Name: XX-23 Homing Beacon
++nocreate
+$Display Name: XX-23
+
+$Name: Repair_Shockwave
++nocreate
+$Display Name: 夸人
+
+$Name: NULL Warhead
++nocreate
+$Display Name: NULL 导弹
+
+$Name: LOCKED Bomb
++nocreate
+$Display Name: NULL 炸弹
+
+#End
+
+#Countermeasures
+
+$Name: Ion Discharge CM
++nocreate
+$Display Name: 艾昂
+
+#End
+
