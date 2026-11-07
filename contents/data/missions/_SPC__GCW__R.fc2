@@ -1,0 +1,87 @@
+$Name: 4. 义军崛起
+$Type: single
++Description:
+ XSTR("Generate your own unique campaign as a pilot for the Rebel Alliance.  Select choices such as time interval, overall goal, and starting rank.  Fleet and wingmen data is persistent across missions, allowing you to recruit large ships, gain squadron leadership, and improve your wingmen.  If you already completed a custom campaign, then you will be able to load persistent data from that previous play-through.
+
+ Length: Variable
+ Type: Dynamic (Rebel Alliance)
+ Difficulty: Depends on Difficulty Settings", 2664)
+$end_multi_text
+$Flags: 0
+
+
++Starting Ships: ( "Z-95 Headhunter#Red" "Z-95 Headhunter#Blue" "Z-95 Headhunter#Green" "Z-95 Headhunter#Grey" "Z-95 Headhunter#Gold" "T-65c X-wing#Red" "T-65c X-wing#Blue" "T-65c X-wing#Green" "T-65c X-wing#Grey" "T-65c X-wing#Gold" "BTL-A4 Y-wing#Red" "BTL-A4 Y-wing#Blue" "BTL-A4 Y-wing#Green" "BTL-A4 Y-wing#Grey" "BTL-A4 Y-wing#Gold" "N-1 Starfighter#Red" "N-1 Starfighter#Blue" "N-1 Starfighter#Green" "N-1 Starfighter#Grey" "N-1 Starfighter#Gold" "RZ-1 A-wing#Red" "RZ-1 A-wing#Blue" "RZ-1 A-wing#Green" "RZ-1 A-wing#Grey" "RZ-1 A-wing#Gold" "ASF-01 B-wing#Red" "ASF-01 B-wing#Blue" "ASF-01 B-wing#Green" "ASF-01 B-wing#Grey" "ASF-01 B-wing#Gold" "E-7 E-wing#Red" "E-7 E-wing#Blue" "E-7 E-wing#Green" "E-7 E-wing#Grey" "E-7 E-wing#Gold" "BTL-LP Longprobe" ) 
+
++Starting Weapons: ( "T&B IX4#Red" "T&B KX-5#Red" "T&B KX-9" "Borstel RG-9" "ArMek SW-4" "Gyrhil 72" "ArMek SW-7a" "Gyrhil R-9X" "T&B KX-4#Red" "T&B IX9" "Arakyd ST2#Orn" "Krupx MG5#Orn" "Dymek HM-6#Orn" "Dymek HM-6a#Orn" "Frei-Tek MAG-2#Yel" "Krupx MG7-A#Pnk" "Dymek HM-8#Pnk" "Krupx VL-4a#Orn" "Frei-Tek IR-4#Red" "S-K INTR#Red" "Merr-Sonn NG2#Yel" "ArmaTek VL-61/79#Pnk" "XX-23 Homing Beacon" )
+
+
+$Mission: _SPC__GCW_intro.fs2
++Flags: 0
++Main Hall: MHall_R2
++Debriefing Persona Index: 3
++Formula: ( cond
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )
+)
+
++Level: 0
++Position: 0
+
+$Mission: _SPC__GCW_0.fs2
++Flags: 0
++Main Hall: MHall_R2
++Debriefing Persona Index: 3
++Formula: ( cond
+   ( ( true ) ( next-mission "_SPC__GCW_1.fs2" ) )
+)
+
++Level: 1
++Position: 0
+
+$Mission: _SPC__GCW_1.fs2
++Flags: 4
++Main Hall: MHall_R2
++Debriefing Persona Index: 3
++Formula: ( cond
+   (
+      ( is-previous-event-true 
+         "_SPC__GCW_1.fs2" 
+         "Set - Campaign Over?" 
+      )
+      ( next-mission "_SPC__GCW_final1.fs2" )
+   )
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )   
+)
+
++Level: 2
++Position: 0
+
+$Mission: _SPC__GCW_final1.fs2
++Flags: 0
++Main Hall: MHall_R2
++Debriefing Persona Index: 3
++Formula: ( cond
+   (
+      ( is-previous-event-true 
+         "_SPC__GCW_final1.fs2" 
+         "Set - Campaign Over?" 
+      )
+      ( next-mission "_SPC__GCW_final2.fs2" )
+   )
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )   
+)
+
++Level: 3
++Position: 0
+
+$Mission: _SPC__GCW_final2.fs2
++Flags: 0
++Main Hall: MHall_R2
++Debriefing Persona Index: 3
++Formula: ( cond
+   ( ( true ) ( end-of-campaign ) )
+)
+
++Level: 4
++Position: 0
+
+#End
