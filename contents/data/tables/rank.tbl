@@ -1,0 +1,111 @@
+; Ranks.tbl 
+; Will contain data for :
+; 1.) player rank names
+; 2.) player rank scores
+;
+; Do not change the ordering of the sections in this table. Also do not add items to the list
+
+
+
+[RANK NAMES]
+$Name:	飞行军官
+$Points:	0
+$Bitmap:	medal12.pcx
+$Promotion Voice Base: rank_0.wav
+$Promotion Text:
+
+XSTR("我荣幸地任命您为正式委任军官。恭喜，飞行军官。", -1)
+
+$end_multi_text
+
+$Name:	少尉
+$Points:	100
+$Bitmap:	medal12a.pcx
+$Promotion Voice Base: rank_a.wav
+$Promotion Text:
+
+XSTR("鉴于您作为飞行员展现的卓越能力，您已被晋升为少尉。", -1)
+
+$end_multi_text
+
+$Name:	中尉
+$Points:	300
+$Bitmap:	medal12b.pcx
+$Promotion Voice Base: rank_b.wav
+$Promotion Text:
+
+XSTR("您作为飞行员和领导者的表现都极为出色，特此晋升您为中尉。", -1)
+
+$end_multi_text
+
+$Name:	上尉
+$Points:	600
+$Bitmap:	medal12c.pcx
+$Promotion Voice Base: rank_c.wav
+$Promotion Text:
+
+XSTR("鉴于您展现了真正的勇气和出色的指挥潜力，您已被晋升为上尉。", -1)
+
+$end_multi_text
+
+$Name:	少校
+$Points:	1200
+$Bitmap:	medal12d.pcx
+$Promotion Voice Base: rank_d.wav
+$Promotion Text:
+
+XSTR("鉴于您非凡的才华和强有力的领导力，您的上级授予您少校军衔。", -1)
+
+$end_multi_text
+
+$Name:	中校
+$Points:	2400
+$Bitmap:	medal12e.pcx
+$Promotion Voice Base: rank_e.wav
+$Promotion Text:
+
+XSTR("您的履历表明您是能力与品格俱佳的军官。我荣幸地通知您，您即刻晋升为指挥官。", -1)
+
+$end_multi_text
+
+$Name:	上校
+$Points:	5000
+$Bitmap:	medal12f.pcx
+$Promotion Voice Base: rank_f.wav
+$Promotion Text:
+
+XSTR("指挥官，鉴于您对我们事业的巨大贡献，我荣幸地传达您的晋升：您已成为上校。", -1)
+$end_multi_text
+
+;; The Brass
+$Name:	准将
+$Points:	10000
+$Bitmap:	medal12g.pcx
+$Promotion Voice Base: rank_g.wav
+$Promotion Text:
+
+XSTR("我们最杰出的领袖们已在您身上看到了将级军官最受推崇的品质与能力。恭喜，准将。", -1)
+
+$end_multi_text
+
+$Name:	少将
+$Points:	20000
+$Bitmap:	medal12h.pcx
+$Promotion Voice Base: rank_h.wav
+$Promotion Text:
+
+XSTR("能取得您这般成就的人寥寥无几。我荣幸地通知您，您已达到少将军衔。", -1)
+
+$end_multi_text
+
+$Name:	中将
+$Points:	40000
+$Bitmap:	medal12i.pcx
+$Promotion Voice Base: rank_i.wav
+$Promotion Text:
+
+XSTR("恭喜，少将。您的才智与奉献为后人树立了榜样。我在此授予您中将军衔。现在，去写本书吧。", -1)
+
+$end_multi_text
+
+#End
