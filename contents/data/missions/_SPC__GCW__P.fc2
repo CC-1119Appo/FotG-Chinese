@@ -1,0 +1,87 @@
+$Name: 5. 私掠利润
+$Type: single
++Description:
+ XSTR("Generate your own unique campaign as a pilot for a privateering organization.  Select choices such as time interval, overall goal, and starting rank.  Fleet and wingmen data is persistent across missions, allowing you to recruit large ships, gain squadron leadership, and improve your wingmen.  If you already completed a custom campaign, then you will be able to load persistent data from that previous play-through.
+
+ Length: Variable
+ Type: Dynamic (Privateer)
+ Difficulty: Depends on Difficulty Settings", 2663)
+$end_multi_text
+$Flags: 0
+
+
++Starting Ships: ( "Z-95 Headhunter" "BTL-A4 Y-wing" "N-1 Starfighter" "Cloakshape Fighter" "ZY-wing" "TYE-wing" "TYE-Vulture" "ZTI-wing" "T-Blade Bomber" "A-3 V-wing Starfighter" "ARC-170 Starfighter" ) 
+
++Starting Weapons: ( "SFS L-s1" "SFS L-s7.2" "SFS L-s9.3" "SFS L-s8.1" "T&B IX4#Red" "T&B KX-5#Red" "T&B KX-4#Red" "ArMek SW-4" "ArMek SW-7a" "Gyrhil 72" "Gyrhil R-9X" "Borstel RG-9" "T&B KX-4#Red" "Arakyd ST2#Orn" "Krupx MG5#Orn" "Dymek HM-6#Orn" "Dymek HM-6a#Orn" "Frei-Tek MAG-2#Yel" "Krupx MG7-A#Pnk" "Dymek HM-8#Pnk" "Krupx VL-4a#Orn" "Frei-Tek IR-4#Red" "S-K INTR#Red" "Merr-Sonn NG2#Yel" "ArmaTek VL-61/79#Pnk" "XX-23 Homing Beacon" "S-1 Seismic Charge" )
+
+
+$Mission: _SPC__GCW_intro.fs2
++Flags: 0
++Main Hall: MHall_P2
++Debriefing Persona Index: 2
++Formula: ( cond
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )
+)
+
++Level: 0
++Position: 0
+
+$Mission: _SPC__GCW_0.fs2
++Flags: 0
++Main Hall: MHall_P2
++Debriefing Persona Index: 2
++Formula: ( cond
+   ( ( true ) ( next-mission "_SPC__GCW_1.fs2" ) )
+)
+
++Level: 1
++Position: 0
+
+$Mission: _SPC__GCW_1.fs2
++Flags: 4
++Main Hall: MHall_P2
++Debriefing Persona Index: 2
++Formula: ( cond
+   (
+      ( is-previous-event-true 
+         "_SPC__GCW_1.fs2" 
+         "Set - Campaign Over?" 
+      )
+      ( next-mission "_SPC__GCW_final1.fs2" )
+   )
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )   
+)
+
++Level: 2
++Position: 0
+
+$Mission: _SPC__GCW_final1.fs2
++Flags: 0
++Main Hall: MHall_P2
++Debriefing Persona Index: 2
++Formula: ( cond
+   (
+      ( is-previous-event-true 
+         "_SPC__GCW_final1.fs2" 
+         "Set - Campaign Over?" 
+      )
+      ( next-mission "_SPC__GCW_final2.fs2" )
+   )
+   ( ( true ) ( next-mission "_SPC__GCW_0.fs2" ) )   
+)
+
++Level: 3
++Position: 0
+
+$Mission: _SPC__GCW_final2.fs2
++Flags: 0
++Main Hall: MHall_P2
++Debriefing Persona Index: 2
++Formula: ( cond
+   ( ( true ) ( end-of-campaign ) )
+)
+
++Level: 4
++Position: 0
+
+#End
