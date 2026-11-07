@@ -1,0 +1,751 @@
+#Ship Classes
+
+$Name: T-65c X-wing
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: T-65c X-wing#Red
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: T-65c X-wing#Blue
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: T-65c X-wing#Gold
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: T-65c X-wing#Green
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: T-65c X-wing#Grey
++nocreate
+$Alt Name: X翼星际战斗机
+
+$Name: BTL-A4 Y-wing
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-A4 Y-wing#Red
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-A4 Y-wing#Blue
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-A4 Y-wing#Gold
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-A4 Y-wing#Green
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-A4 Y-wing#Grey
++nocreate
+$Alt Name: Y翼星际战斗机
+
+$Name: BTL-LP Longprobe
++nocreate
+$Alt Name: BTL-LP 长程侦察机
+
+$Name: RZ-1 A-wing
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: RZ-1 A-wing#Red
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: RZ-1 A-wing#Blue
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: RZ-1 A-wing#Gold
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: RZ-1 A-wing#Green
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: RZ-1 A-wing#Grey
++nocreate
+$Alt Name: RZ-1 A翼截击机
+
+$Name: ASF-01 B-wing
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: ASF-01 B-wing#Red
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: ASF-01 B-wing#Blue
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: ASF-01 B-wing#Gold
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: ASF-01 B-wing#Green
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: ASF-01 B-wing#Grey
++nocreate
+$Alt Name: B翼星际战斗机
+
+$Name: E-7 E-wing
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: E-7 E-wing#Red
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: E-7 E-wing#Blue
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: E-7 E-wing#Gold
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: E-7 E-wing#Green
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: E-7 E-wing#Grey
++nocreate
+$Alt Name: E翼星际战斗机
+
+$Name: T.I.E. Fighter
++nocreate
+$Alt Name: TIE战斗机
+
+$Name: TIE/ln Fighter
++nocreate
+$Alt Name: TIE 星际战斗机
+
+$Name: TIE/rc Fighter
++nocreate
+$Alt Name: TIE 侦察星际战斗机
+
+$Name: TIE Advanced X1
++nocreate
+$Alt Name: TIE高级型
+
+$Name: TIE/In Interceptor
++nocreate
+$Alt Name: TIE截击机
+
+$Name: TIE/In Interceptor Mk.2
++nocreate
+$Alt Name: TIE截击机
+
+$Name: TIE/sa Bomber
++nocreate
+$Alt Name: TIE轰炸机
+
+$Name: TIE/sh Shuttle
++nocreate
+$Alt Name: TIE穿梭机
+
+$Name: V38 Assault Fighter
++nocreate
+$Alt Name: V38 突击战斗机
+
+$Name: N-1 Starfighter
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Red
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Blue
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Gold
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Green
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Grey
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: N-1 Starfighter#Rep
++nocreate
+$Alt Name: N-1 星际战斗机
+
+$Name: Z-95 Headhunter
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: Z-95 Headhunter#Red
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: Z-95 Headhunter#Blue
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: Z-95 Headhunter#Gold
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: Z-95 Headhunter#Green
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: Z-95 Headhunter#Grey
++nocreate
+$Alt Name: Z-95猎头者
+
+$Name: ARC-170 Starfighter
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: ARC-170 Starfighter#Red
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: ARC-170 Starfighter#Blue
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: ARC-170 Starfighter#Gold
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: ARC-170 Starfighter#Green
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: ARC-170 Starfighter#Grey
++nocreate
+$Alt Name: ARC-170星际战斗机
+
+$Name: A-3 V-wing Starfighter
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: A-3 V-wing Starfighter#Red
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: A-3 V-wing Starfighter#Blue
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: A-3 V-wing Starfighter#Gold
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: A-3 V-wing Starfighter#Green
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: A-3 V-wing Starfighter#Grey
++nocreate
+$Alt Name: A-3 V翼星际战斗机
+
+$Name: Vulture Droid Starfighter
++nocreate
+$Alt Name: 秃鹫机器人
+
+$Name: Vulture Droid Starfighter#TF
++nocreate
+$Alt Name: 秃鹫机器人
+
+$Name: Vulture Droid Starfighter#CIS
++nocreate
+$Alt Name: 秃鹫机器人
+
+$Name: Cloakshape Fighter
++nocreate
+$Alt Name: 斗篷形战斗机
+
+$Name: Cloakshape Fighter#Yellow
++nocreate
+$Alt Name: 斗篷形战斗机
+
+$Name: ZY-wing
++nocreate
+$Alt Name: ZY翼
+
+$Name: TYE-wing
++nocreate
+$Alt Name: TYE翼
+
+$Name: TYE-Vulture
++nocreate
+$Alt Name: TYE 秃鹫
+
+$Name: ZTI-wing
++nocreate
+$Alt Name: ZTI翼
+
+$Name: T-Blade Bomber
++nocreate
+$Alt Name: T刃轰炸机
+
+$Name: UT-60D U-wing
++nocreate
+$Alt Name: U翼运输机
+
+$Name: UT-60D U-wing#Red
++nocreate
+$Alt Name: U翼运输机
+
+$Name: UT-60D U-wing#Blue
++nocreate
+$Alt Name: U翼运输机
+
+$Name: UT-60D U-wing#Gold
++nocreate
+$Alt Name: U翼运输机
+
+$Name: UT-60D U-wing#Green
++nocreate
+$Alt Name: U翼运输机
+
+$Name: UT-60D U-wing#Grey
++nocreate
+$Alt Name: U翼运输机
+
+$Name: XG-1 Star Wing
++nocreate
+$Alt Name: 突击炮艇
+
+$Name: DX-9 Stormtrooper Transport
++nocreate
+$Alt Name: DX-9 运输船
+
+$Name: Lambda T-4a Shuttle
++nocreate
+$Alt Name: 兰姆达 T-4a 穿梭机
+
+$Name: Zeta Hvy Cargo Shuttle
++nocreate
+$Alt Name: 泽塔重型货运穿梭机
+
+$Name: Skipray Blastboat
++nocreate
+$Alt Name: 跳射线冲击艇
+
+$Name: Firespray Gunship
++nocreate
+$Alt Name: 火力喷射炮艇
+
+$Name: Modified Firespray Gunship
++nocreate
+$Alt Name: 改装型火力喷射炮艇
+
+$Name: YT-1300 Freighter
++nocreate
+$Alt Name: YT-1300 货船
+
+$Name: Modified YT-1300 Freighter
++nocreate
+$Alt Name: 改装型 YT-1300 货船
+
+$Name: Star Speeder 3000
++nocreate
+$Alt Name: 星际飞车 3000
+
+$Name: Action VI Transport
++nocreate
+$Alt Name: 行动VI运输船
+
+$Name: Corellian Star Shuttle
++nocreate
+$Alt Name: 科雷利亚星际穿梭机
+
+$Name: Corellian Star Shuttle#Rep
++nocreate
+$Alt Name: 科雷利亚星际穿梭机
+
+$Name: TN1 Container
++nocreate
+$Alt Name: TN1 集装箱
+
+$Name: TN2 Container
++nocreate
+$Alt Name: TN2 集装箱
+
+$Name: TN3 Container
++nocreate
+$Alt Name: TN3 集装箱
+
+$Name: TN4 Container
++nocreate
+$Alt Name: TN4 集装箱
+
+$Name: DV-3 Freighter
++nocreate
+$Alt Name: DV-3 货船
+
+$Name: DV-3 Freighter#Working
++nocreate
+$Alt Name: DV-3 货船
+
+$Name: DV-3 Freighter#NoCargo
++nocreate
+$Alt Name: DV-3 货船
+
+$Name: DV-3 Container
++nocreate
+$Alt Name: DV-3 集装箱
+
+$Name: BFF-1 Freighter
++nocreate
+$Alt Name: BFF-1 货船
+
+$Name: BFF-1 Freighter#NoCargo
++nocreate
+$Alt Name: BFF-1 货船
+
+$Name: BFF-1 Container
++nocreate
+$Alt Name: BFF-1 集装箱
+
+$Name: Rayter Transport
++nocreate
+$Alt Name: 雷特运输船
+
+$Name: GR-75 Transport
++nocreate
+$Alt Name: 加洛弗里运输舰
+
+$Name: AT-AT#Static
++nocreate
+$Alt Name: AT-AT 步行机
+
+$Name: AT-AT#Mobile
++nocreate
+$Alt Name: AT-AT 步行机
+
+$Name: Gozanti Cruiser#Imp
++nocreate
+$Alt Name: 戈赞蒂级巡洋舰
+
+$Name: Gozanti Cruiser#Rep
++nocreate
+$Alt Name: 戈赞蒂级巡洋舰
+
+$Name: Gozanti Cruiser#Pirate
++nocreate
+$Alt Name: 戈赞蒂级巡洋舰
+
+$Name: Charger c70 Frigate
++nocreate
+$Alt Name: 突击者 c70 护卫舰
+
+$Name: CR90 Corvette#Reb
++nocreate
+$Alt Name: CR90轻型护卫舰
+
+$Name: CR90 Corvette#Imp
++nocreate
+$Alt Name: CR90轻型护卫舰
+
+$Name: Raider Corvette
++nocreate
+$Alt Name: 掠袭者护卫舰
+
+$Name: Braha'tok Gunship
++nocreate
+$Alt Name: 布拉哈托克炮艇
+
+$Name: Marauder Corvette#Pir
++nocreate
+$Alt Name: 掠夺者护卫舰
+
+$Name: Marauder Corvette#Rep
++nocreate
+$Alt Name: 掠夺者护卫舰
+
+$Name: Marauder Corvette#Imp
++nocreate
+$Alt Name: 掠夺者护卫舰
+
+$Name: Carrack Lgt Cruiser#I
++nocreate
+$Alt Name: 大帆船级轻型巡洋舰
+
+$Name: Carrack Lgt Cruiser#R
++nocreate
+$Alt Name: 大帆船级轻型巡洋舰
+
+$Name: Arquitens Lgt Cruiser#I
++nocreate
+$Alt Name: 阿奎滕斯巡洋舰
+
+$Name: Arquitens Lgt Cruiser#R
++nocreate
+$Alt Name: 阿奎滕斯巡洋舰
+
+$Name: Nebulon-B Frigate
++nocreate
+$Alt Name: EF76内布伦-B护航护卫舰
+
+$Name: MC30 Type Frigate
++nocreate
+$Alt Name: MC30级护卫舰
+
+$Name: Strike Med Cruiser#I
++nocreate
+$Alt Name: 打击级中型巡洋舰
+
+$Name: Strike Med Cruiser#R
++nocreate
+$Alt Name: 打击级中型巡洋舰
+
+$Name: Dreadnaught Hvy Cruiser#P
++nocreate
+$Alt Name: 无畏级巡洋舰
+
+$Name: Dreadnaught Hvy Cruiser#Reb
++nocreate
+$Alt Name: 无畏级巡洋舰
+
+$Name: Dreadnaught Hvy Cruiser#I
++nocreate
+$Alt Name: 无畏级巡洋舰
+
+$Name: Dreadnaught Hvy Cruiser#Rep
++nocreate
+$Alt Name: 无畏级巡洋舰
+
+$Name: MC40 Type Star Cruiser
++nocreate
+$Alt Name: MC40 星际巡洋舰
+
+$Name: Vindicator Hvy Cruiser
++nocreate
+$Alt Name: 洗冤者级重型巡洋舰
+
+$Name: Interdictor Cruiser
++nocreate
+$Alt Name: 阻绝者巡洋舰
+
+$Name: Venator Cruiser#Republic
++nocreate
+$Alt Name: 狩猎者级歼星舰
+
+$Name: Venator Cruiser#Pirate
++nocreate
+$Alt Name: 狩猎者级歼星舰
+
+$Name: Imperial Star Destroyer
++nocreate
+$Alt Name: 帝国歼星舰
+
+$Name: Liberty Type Star Cruiser
++nocreate
+$Alt Name: MC80 星际巡洋舰
+
+$Name: Home One Type Star Cruiser
++nocreate
+$Alt Name: MC80A 家园一号型重型星际巡洋舰
+
+$Name: Super Star Destroyer#Prop
++nocreate
+$Alt Name: 超级歼星舰
+
+$Name: Asteroid Base
++nocreate
+$Alt Name: 小行星基地
+
+$Name: XQ1 Platform#Reb
++nocreate
+$Alt Name: XQ1 平台
+
+$Name: XQ1 Platform#Imp
++nocreate
+$Alt Name: XQ1 平台
+
+$Name: XQ2 Platform#Reb
++nocreate
+$Alt Name: XQ2 平台
+
+$Name: XQ2 Platform#Imp
++nocreate
+$Alt Name: XQ2 平台
+
+$Name: Golan 120 Station
++nocreate
+$Alt Name: 戈兰120空间站
+
+$Name: M-3185 Shield Gate
++nocreate
+$Alt Name: M-3185 护盾门
+
+$Name: Shield Plane#ForGate
++nocreate
+$Alt Name: 护盾平面
+
+$Name: Defense Satellite#Reb
++nocreate
+$Alt Name: 防御卫星
+
+$Name: Defense Satellite#Imp
++nocreate
+$Alt Name: 防御卫星
+
+$Name: Sensor Satellite#Reb
++nocreate
+$Alt Name: 传感器卫星
+
+$Name: Sensor Satellite#Imp
++nocreate
+$Alt Name: 传感器卫星
+
+$Name: Defense Mine#Explosive
++nocreate
+$Alt Name: 防御水雷
+
+$Name: Defense Mine#Ion
++nocreate
+$Alt Name: 防御水雷
+
+$Name: Escape Pod
++nocreate
+$Alt Name: 逃生舱
+
+$Name: Escape Pod#Fancy
++nocreate
+$Alt Name: 逃生舱
+
+$Name: Sensor Probe
++nocreate
+$Alt Name: 传感器探测器
+
+$Name: DKT Repair Droid
++nocreate
+$Alt Name: 通用机器人
+
+$Name: Nav Buoy
++nocreate
+$Alt Name: 导航浮标
+
+$Name: Nav Buoy#real
++nocreate
+$Alt Name: 导航浮标
+
+$Name: Asteroid#Small01
++nocreate
+$Alt Name: 小行星
+
+$Name: Asteroid#Small02
++nocreate
+$Alt Name: 小行星
+
+$Name: Asteroid#Small03
++nocreate
+$Alt Name: 小行星
+
+$Name: Asteroid#Medium01
++nocreate
+$Alt Name: 小行星（中）
+
+$Name: Asteroid#Medium02
++nocreate
+$Alt Name: 小行星（中）
+
+$Name: Asteroid#Medium03
++nocreate
+$Alt Name: 小行星（中）
+
+$Name: Asteroid#Big01
++nocreate
+$Alt Name: 小行星（大）
+
+$Name: Asteroid#Big02
++nocreate
+$Alt Name: 小行星（大）
+
+$Name: Asteroid#Big03
++nocreate
+$Alt Name: 小行星（大）
+
+$Name: Generic Debris#Tube01
++nocreate
+$Alt Name: 通用残骸
+
+$Name: Generic Debris#Tube02
++nocreate
+$Alt Name: 通用残骸
+
+$Name: Generic Debris#Dish01
++nocreate
+$Alt Name: 通用残骸
+
+$Name: Generic Debris#Dish02
++nocreate
+$Alt Name: 通用残骸
+
+$Name: Generic Debris#Scaffold01
++nocreate
+$Alt Name: 通用残骸
+
+$Name: Generic Debris#Scaffold02
++nocreate
+$Alt Name: 通用残骸
+
+$Name: ISD Debris#Small01
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Small02
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Small03
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Small04
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Small05
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Small06
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Big01
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Big02
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: ISD Debris#Big03
++nocreate
+$Alt Name: 歼星舰残骸
+
+$Name: Command_Controller_Ship
++nocreate
+$Alt Name: 指挥控制舰
+
+$Name: Bombardment_Target
++nocreate
+$Alt Name: 轰击目标
+
+#End
