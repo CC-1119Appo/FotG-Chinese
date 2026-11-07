@@ -1,11 +1,11 @@
 {
   "mod_source": "nebula",
   "installed": true,
-  "id": "FotG_简体中文包",
-  "title": "FotG_简体中文包",
+  "id": "FotG_绠€浣撲腑鏂囧寘",
+  "title": "FotG_绠€浣撲腑鏂囧寘",
   "type": "mod",
   "parent": "FotG",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "private": true,
   "stability": null,
   "description": "",
@@ -35,12 +35,12 @@
       "dependencies": [
         {
           "id": "FotG",
-          "version": "999.0.0-DevEnv",
+          "version": "1.0.0",
           "packages": []
         },
         {
           "id": "FSO",
-          "version": ">=25.0.0",
+          "version": "1.0.0",
           "packages": []
         }
       ],
