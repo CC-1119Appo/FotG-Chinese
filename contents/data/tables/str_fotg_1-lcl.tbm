@@ -1,0 +1,469 @@
+#English
+;; NOTES:
+;; Indented lines are not critical to translate because -- 
+;; -- the only difference with original FS2 translations is with capitalizations.
+;; Also, strings for Main Hall options and Help Menus are in mainhall.tbl and help.tbl, respectively.
+
+39, "** WARNING ** Collision danger.  Hyperspace jump aborted."
+40, ""; "Engine failure.  Cannot engage hyperdrive." ;;turned off since it auto appeared and was ugly
+
+81, "Cannot jump out at this time."
+82, "Unable to engage hyperdrive... ship must be able to reach %.1f km/s"
+	83, "乘员: %s"
+	84, "货物: %s"
+
+	86, "货物: <未知>"
+	87, "未扫描"
+	88, "货物: 扫描中" ;"Cargo: Inspecting"
+	89, "扫描中"
+	90, "导弹"
+	91, "Laser Fire"
+
+101, " " ;"top view"
+102, " " ;"rear view"
+103, " " ;"left view"
+104, " " ;"right view"
+
+106, "返回主菜单"
+
+110, "警告\n这将导致你当前战役的所有进度丢失，\n除非你正在重新开始第 4、5 或 6 号战役。";"Warning\nThis will cause all progress in your\ncurrent campaign to be lost"
+
+146, "Quit Fate of the Galaxy immediately"
+
+134, " " ;"Function Keys"
+
+168, " " ;"In-game messaging keys" ;"Ingame messaging keys (tap for text, hold for voice)"
+
+190, "返回主菜单"
+
+205, "\n\n冲突!" 200
+
+217, "消息"
+218, "诊断"
+
+	222, "已阵亡"
+	223, "击坠:"
+	224, "支援"
+	225, "已中止"
+	226, "完成"
+	227, "维修中"
+	228, "重新装弹"
+	229, "受阻"
+230, "跃入中"
+	231, "忙碌"
+	232, "对接："
+233, "超空间引擎"
+	234, "已启动"
+	235, "接收新"
+	236, "命令……"
+	237, "主要任务"
+	238, "次要任务"
+	239, "奖励任务"
+	240, "失败 (%d/%d)"
+	241, "完成 (%d/%d)"
+	242, "失败"
+
+
+	246, "2000 M"
+	247, "10,000 M"
+	248, "Infinity"
+	249, "预瞄标" ;HUD Gauge
+	250, "目标飞船指向指示" ;HUD Gauge
+	251, "攻击者方位指示" ;HUD Gauge
+	252, "当前目标方位指示" ;HUD Gauge
+	253, "任务计时" ;HUD Gauge
+	254, "准星" ;HUD Gauge
+	255, "油门" ;HUD Gauge
+	256, "雷达" ;HUD Gauge
+	257, "目标监视器" ;HUD Gauge
+	258, "中心准星" ;HUD Gauge
+	259, "额外目标信息面板" ;HUD Gauge
+	260, "目标护盾" ;HUD Gauge
+	261, "玩家护盾" ;HUD Gauge
+	262, "能量管理" ;HUD Gauge
+	263, "自动追踪状态" ;HUD Gauge
+	264, "自动配速状态" ;HUD Gauge
+	265, "武器面板" ;HUD Gauge
+	266, "优先目标监视面板" ;HUD Gauge
+	267, "任务目标面板" ;HUD Gauge
+	268, "威胁指示" ;HUD Gauge
+	269, "Afterburner Energy" ;HUD Gauge
+	270, "武器能量" ;HUD Gauge
+	271, "武器联动" ;HUD Gauge
+	272, "目标船体/护盾标识" ;HUD Gauge
+	273, "屏幕外指示标 \n及目标文本" ;"Offscreen Indicator" ;HUD Gauge
+	274, "Comm Video" ;HUD Gauge
+	275, "损伤显示" ;HUD Gauge
+	276, "消息显示" ;HUD Gauge
+	277, "锁定导弹方向指示标" ;HUD Gauge
+	278, "Countermeasures" ;HUD Gauge
+	279, "目标通知" ;HUD Gauge
+	280, "飞行编队状态" ;HUD Gauge
+	281, "Offscreen Range" ;HUD Gauge
+	282, "击坠统计" ;HUD Gauge
+	283, "攻击目标数" ;HUD Gauge
+
+
+284, "(dis)"
+285, "优先列表" ;"Escort"
+286, "优先列表视图已启用" ;"Escort view enabled"
+287, "优先列表视图已禁用" ;"Escort view disabled"
+288, "优先列表已满，包含 %d 艘船" ;"Priority list is full with %d ships"
+
+293, " 飞船" ;"Ships"
+294, " 编队" ;"Wings"
+295, " 所有飞船" ;"All Ships/Wings"
+296, " 增援"
+297, " 请求补给/维修" ;"Rearm/Repair Subsys"
+298, " 终止补给/维修" ;"Abort Rearm"
+
+314, "No valid items"
+315, "Not authorized" ;"Not allowed to message"
+316, "发出指令至" ;"Message What"
+	;317, "选择飞船"
+	;318, "选择编队僚机"
+	;319, "选择飞船/飞行编队"
+	;320, "(*)"
+	321, "选择指令" ;"What Command"
+
+	327, "Ion Charge"
+	328, "武器"
+
+333, "YYYYY" ;"Communication" ;;hack to make FSO not shorten subsystem name
+334, "通讯器" ;"Comm"
+335, "ZZZZZ" ;"Navigation" ;;hack to make FSO not shorten subsystem name
+336, "导航计算机" ;"Nav"
+
+	329, " " ; <none>
+
+	344, "DIS"
+	345, " 良" 4
+	346, " 损" 4
+	347, " 危" 4
+
+	352, "飞行编队"
+
+361, "Winsock is not installed.  You must have TCP/IP and Winsock installed to play multiplayer."
+362, "You have selected TCP/IP for multiplayer, but the TCP/IP protocol was not detected on your machine."
+
+	422, "命令"
+
+371, "按F1打开提示" ;"Press F1 for help"
+
+381, "\nType Callsign and Press Enter (Press Escape to Cancel)" ;"Type Callsign and Press Enter "
+
+385, "《银河系命运》是一款由粉丝志愿者开发的全面转换模组，它与卢卡斯影业有限公司、迪士尼均无关联，也不是官方的《星球大战》产品。" -10;"Copyright %c 1999, Volition, Inc.  All rights reserved."
+
+426, "Warning\nYou have no control bound to the action \"%s\".  You must do so before you can continue with this mission."
+
+443, "Go to &Main Menu"
+
+457, "Because this mission was a failure, you must replay this mission when you continue your campaign.\n\nReturn to the Main Menu?"
+
+	459, "往下翻页查看更多内容" ;;debrief
+
+466, "超空间跳跃终止"
+
+495, " " ;"No orders"
+
+	503, "&好的"
+	504, "&取消"
+	505, "&是"
+	506, "&否"
+
+515, "追踪目标的最近追踪者" ;"Target Target's Nearest Attacker"
+
+521, "取消追踪当前部位" ;"Turn Off Auto-Targeting of Subsystems"
+	526, "切换主武器"
+	528, "切换副武器"
+
+	545, "僚机指令: 攻击我的目标"
+	546, "僚机指令: 解除我的目标武装"
+	547, "僚机指令: 瘫痪我的目标"
+	548, "僚机指令: 攻击我的目标的部位"
+	549, "僚机指令: 与我的目标泊接"
+	550, "僚机指令: 接敌"
+	551, "僚机指令: 整理队形"
+	552, "僚机指令: 忽视我的目标"
+	553, "僚机指令: 包含我的目标"
+	554, "僚机指令: 掩护我"
+	555, "僚机指令: 返回基地"
+	556, ""; "Order Wingmen: Rearm Me"
+
+573, "进入超空间 (结束任务)"
+575, ""; "Afterburner"
+591, ""; "Bank When Pressed"
+
+593, "添加或移除优先目标" ;"Add or Remove Escort"
+594, "清除优先目标列表" ;"Clear Escort List"
+595, "追踪下一艘优先列表船只" ;"Target Next Escort Ship"
+
+596, "" ;"Target Closest Repair Ship"
+
+558, "切换第一/第三人称视角" ;"Chase View"
+559, "切换电影镜头视角" ;"External View"
+560, "切换电影镜头视角锁定" ;"Toggle External Camera Lock"
+
+602, "追踪下一个敌方轰炸机" ;"Target Next Hostile Bomb or Bomber"
+603, "追踪上一个敌方轰炸机"; "Target Previous Hostile Bomb or Bomber"
+
+	609, "增加时间倍率"
+	610, "减少时间倍率"
+	611, "开关探照灯" ; "Toggle High Contrast HUD" 
+	612, "(多人) 显示网络信息"
+	613, "(多人) 自毁"
+	614, "开关HUD"
+	615, "Right Thrust"
+	616, "Left Thrust"
+	617, "Up Thrust"
+	618, "Down Thrust"
+
+722, "You have been rejected because the game is not in an appropriate state to accept, only games that are listed as 'Forming' or 'Playing' can be joined"
+
+746, "主武器组数" ;"Gun Mounts"
+747, "副武器组数" ;"Missile Banks"
+
+749, "飞船/武器当前被锁定" ;"Ships/Weapons Locked"
+750, "飞船/武器现已解锁" ;"Ships/Weapons Are Now Free"
+
+	755, "More" ;;multi UI
+
+800, "Warning\nmessage wait time is greater than max allowed (%d)"
+
+951, "Connected to Parallax Online (PXO). To exit, press the Escape key."
+
+1044, "<Please note, stats will not be saved in this mode>" ;"<Server detected a hacked ships.tbl. Stats will not be saved>"
+1045, "Please note, stats will not be saved in this mode" ;"You are playing with a hacked ships.tbl, your stats will not be saved"
+1046, "<Please note, stats will not be saved in this mode>" ;"<Server detected a hacked weapons.tbl. Stats will not be saved>"
+1047, "<Please note, stats will not be saved in this mode>" ;"You are playing with a hacked weapons.tbl, your stats will not be saved"
+1048, "<Not enough players were present at game start or end, stats will not be saved>"
+1049, "<Server detected a non PXO validated mission. Stats will not be saved>"
+1050, "This is not a PXO validated mission, your stats will not be saved"
+1051, "<Please note, stats will not be saved in this mode>" ;"You or the server you are playing on has a hacked ships.tbl. Your stats will not be updated on PXO"
+1052, "<Please note, stats will not be saved in this mode>" ;"You or the server you are playing on has a hacked weapons.tbl. Your stats will not be updated on PXO"
+
+1055, "数据库" ;"Technical Database"
+1056, "训练场" ;"Mission Simulator"
+
+1065, "武器/能量" -5
+
+	1057, ""
+
+; these are used for mutli object update, detail levels, and in-game option levels
+1160, "非常低" 400 ;; "Minimum" hide but keep availability in in-game F3 menu
+1161, "低" 25; "Medium"
+1162, "中" 5; "High"
+1163, "高" 45; "Very High"
+
+1263, "" ;"Campaigns"
+
+1270, "Assign" ;"Confirm" ; "Lock" ;; :Lock/nShip/nClasses
+
+1271, "stats will not be saved" ;"has hacked tables/data"
+1272, "One or more players has non-standard data files. You cannot play a SquadWar match unless all clients have legal data" ;"One or more players has hacked data files. You cannot play a SquadWar match unless all clients have legal data"
+1273, "Please note, stats will not be stored at the end of the mission in this mode" ;"One or more players has hacked data files. If you continue, stats will not be stored at the end of the mission"
+1274, "Please note, one or more players has stats that will not be saved" ;"One or more players has hacked data files"
+
+1298, "Message Wait"; "Voice Wait"
+
+1295, "Message Slowdown" ;"Voice Transmission"			; OptionsMenuMulti
+1296, "" ;"Voice Quality"
+
+1300, "Join as\nObserver"
+1301, "";"Observer"
+1302, "";"Game"
+
+1343, "     撤销\n(Ctrl/Cmd-Z)" -20;"Undo"
+1344, "循环\n预设" ; "Defaults"
+
+1347, "清除"
+1348, "冲突" 15
+1349, "全部" 
+1350, "选中" 10
+
+1353, "控制配置" -5 ; "Config"
+
+1355, "\n\n 图形预设\n(需要重启)" 80;"Detail Presets"
+
+	1379, "" ;"IPX"
+
+1383, "PXO [connect to multiplayer servers, register at pxo.nottheeye.com]"
+1384, "Login [allows 'Paste' (Ctrl-V or Cmd-V)]" ;"Login"
+1385, "Password [allows 'Paste' (Ctrl-V or Cmd-V)]" ;"Password"
+
+1386, "Squadron (optional)"
+1387, "Broadcast Locally"
+
+1391, "Object Update\n    (High is\n    recommended)"
+1392, "High" -5;-20 ;"Highest" "Lan"
+
+1351, "图形设置" -15;"Detail"
+; To increase performance on low end systems disable Deferred, Shadows, and MSAA. 
+; To increase graphics on higher end systems enable Deferred, Shadows, and MSAA. 
+; Graphic updates require a game restart.
+
+1356, "自定义" -15
+1357, "星球/背景" 40 ;"Planets/backgrounds"
+1358, "目标视图渲染" 45
+1359, "额外武器细节" 0
+
+;;Detail settings, go from 0-4 except for Lighting which goes from 0-3
+1360, "模型质量" 
+1361, "特效质量" ; "Nebula" ; (hit effects start at 3, r2 effects and cockpitflash start at 2)
+1362, "\n下方选项需要重启游戏才能生效\n*** 表示对性能影响较大";"3D 硬件纹理" ;
+1363, "延迟光照质量" ; "Particles" ; (cockpit deferred on at 4, deferred is on at 2, off at 0)
+1364, "抗锯齿质量\n" ; "Impact Effects" ; SMAA AA (0=Off, 1=AA Low, 2=AA Medium, 3=AA High, 4=AA Ultra)
+1365, "阴影质量 ***" ; "Shield Hit Effects" ; Shadows (0=Off, 1=Low, 2=Medium 3=High, 4=Ultra)
+1366, "额外多重采样抗锯齿质量 ***" ;"Stars" ; Extra MSAA (0=Off, 1=Off, 2=MSAA 4x, 3=MSAA 4x, 4=MSAA 8x)
+1367, "反射光源" -60; "Lighting"
+;;soft particles just always on?
+
+1378, "TCP Confirmed (port forwarding is automatic)\n   Note, multiplayer works best with Local Area Network (LAN) connections \n   because sync issues from high pings can result in less than ideal gameplay. " ; "TCP"
+1388, "Settings Valid" -30 ;"General" ;2_OMuB_09
+
+1411, "杂项" -5		; control config
+
+1413, "清除" 15; control config - delete/clear all
+1414, "清除" -8; control config - delete/clear selected
+
+1415, "HUD配置" ; "Config"
+
+1417, "接受" ;"退出"	; multiplayer host options (involves saving so should be accept instead of just exit)
+
+1428, "" ;"-冲击波-" ;Blast
+1429, "-引擎尾流-" ;Engine wash
+1430, "-规避-"
+1431, "-撞击-"
+
+; HUD config screen
+1454, "保存预设 (点击文本以重新命名)"
+1455, "" ; "Amber"
+1456, "" ; "Blue"
+1457, "" ; "Green"
+
+	1459, "警告提示" ;HUD Gauge
+	1460, "通讯面板" ;HUD Gauge
+	1461, "支援表" ;HUD Gauge
+	1462, "延迟指示" ;HUD Gauge
+
+	1469, "往下翻页查看更多内容" ;;for spillover lines in techroom/briefing
+
+1472, "You have failed to complete this mission five times.  If you like, you may skip to the next mission."
+1473, "Do Not Skip This Mission"
+1474, "Skip To The Next Mission"
+1475, "Do Not Show This Again"
+
+1507, "-规避-"						; "Launch" flashing missile launch icon on HUD
+
+	1528, "" ;"Voice"
+
+1530, "Message Optimization" ;"Voice Transmission"			; OptionsMenuMulti
+1531, "" ;"Voice Quality"
+
+	1583, "Current Score:"
+
+1596, "Warhead"
+
+1067, "飞船选择"
+1068, "武器配置"; "Weapon Loadout"
+
+1373, "有效的" ; "Mouse"
+1376, "游戏控制器设置" -20 ;"Joystick"
+
+1570, "Firing weapons" ;"Firing artillery"
+
+1571, "" ;"Description"									; short description in the ship selection
+1572, "Navigation failure. Cannot engage hyperdrive." ;"Navigation failure. Cannot engage subspace drive."
+1573, "Cannot engage hyperdrive drive while gliding." ;"Cannot engage subspace drive while gliding."
+
+1584, "<Please note, stats are not being saved in this mode>" ;"<Hacked tables detected - stats have been tossed>"
+1585, "Please note, your stats will not be saved in this mode" ;"You are playing with a hacked tables, your stats will not be saved"
+
+
+1635, "超空间引擎已修复." ;"Subspace drive repaired."
+
+1661, "下一个预设" -5
+
+1665, "鼠标设置" ; (if you set to 'Mouse' then also update Control Configuration)
+1666, ""; "Joy-0" ; hiding mouse as joy-0
+	1667, "m" ; "m" ;match speed "lower case so it fits in it's autogenerated space better"
+
+1670,"-离子放电-" ; "Emp"
+
+1721, "高" ;"Ultra"
+
+1748, "      游戏分辨率";"Resolution"
+1749, "游戏的渲染分辨率"
+
+1772, "显示模式"
+1773, "控制游戏屏幕窗口的创建方式"
+
+1775, "切换活动暂停" ;"Toggle Gliding" ; 
+
+; these are for Custom Control 1-5 
+1784, "切换瞄准计算机"
+1785, "切换鼠标控制模式"
+1786, "开合S翼"
+1787, "清除当前目标" ;
+1788, "切换静态瞄准模式"
+
+1830, "SCP Options (click to show categories)"
+1831, ""; "Press F3 to access additional options"
+
+1842, "鼠标控制模式" ;"Flight Mode"
+1843, "使用“机动”模式时，鼠标的操作方式类似于摇杆，可执行规避转向。使用“精确”模式时，鼠标的操作方式与传统方式相同，可实现精确瞄准。该设置也可在游戏中通过“切换鼠标移动模式”键进行切换。";"选择游戏过程中使用的飞行风格（“机动”模式允许鼠标像摇杆一样移动）"
+1844, "精准";"Ship Locked"
+1845, "机动";"Flight Cursor"
+1846, "Joystick Mouse Cursor Extent" ;"Flight Cursor Extent"
+1847, "How far from the center of the screen\nthe mouse cursor can go when in joystick mouse mode,\nlarge values result in lower sensitivity." ;"How far from the center the cursor can go"
+1848, "Joystick Mouse Cursor Deadzone" ;"Flight Cursor Deadzone"
+1849, "How far from the center of the screen\nthe mouse cursor needs to go before\nregistering when in joystick mouse mode.";"How far from the center the cursor needs to go before registering"
+
+	1850, "%s: <未知>"
+1851, "%s: 扫描中" ;"%s: inspecting"
+	1852, "<未知>"
+1853, "扫描中" ;"scanning"
+
+1866, "You have unsaved changes.\n\n\n Do you wish to exit without saving?" 
+1867, "Confirm new custom preset name.\n\nThe name cannot be 'default' or remain blank.\n\n Press [Enter] to accept or press [Esc] to close this popup."
+
+1874, "Incoming Messages" ;"Terran Fighter: HUD Message Display"
+1875, "Fixed Message" ; "This is a fixed message"
+1876, "" ;"Default HUD"
+
+1886, " %1d." ;"%1d."
+1887, " %1d->" ;">>"
+
+561, "第一人称自由视角"
+1021, "设备/鼠标 X 轴"
+1022, "设备/鼠标 Y 轴"
+1023, "设备 Z 轴"
+1024, "设备 rX 轴"
+1025, "设备 rY 轴"
+1026, "设备 rZ 轴"
+1699, "设备-1"
+1703, "外部视野"
+1704, "驾驶舱外任意视角的垂直视野。"
+1705, "设备 1"
+1706, "当前摇杆/控制器设备 1"
+1707, "设备 2"
+1708, "当前摇杆/控制器设备 2"
+1709, "设备 3"
+1710, "当前摇杆/控制器设备 3"
+1711, "设备 4"
+1712, "当前摇杆/控制器设备 4"
+1744, "所有摇杆/控制器输入设备使用的死区"
+1746, "所有摇杆/控制器输入设备使用的灵敏度"
+1840, "驾驶舱视野"
+1841, "驾驶舱的垂直视野。"
+1868, "鼠标 "
+1869, "设备-1： "
+1870, "设备-2： "
+1871, "设备-3： "
+1872, "设备-4： "
+1878, "游戏 VR 分辨率"
+1879, "VR 模式下的游戏渲染分辨率"
+1675, "无边框"
+1676, "窗口化"
+1679, "全屏"
+#end
