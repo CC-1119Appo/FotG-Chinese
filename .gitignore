@@ -1,0 +1,5 @@
+﻿*.bak
+.b_rollback/
+.vs/
+_name_report*.txt
+_name_missing*.txt
