@@ -1558,8 +1558,9 @@ PXO账号。"
 1166, "给那些本不该挂载炸弹的蠢战斗机用的。"
 ;;dev_stress_test_1.fs2
 1167, "[Stress Test] Compare w/ XWVM"
-1168, "Put mission description here\r\n"
-1169, "无"
+1168, "Put mission description here
+"
+1169, "Nothing"
 ;;dev_stress_test_2.fs2
 1170, "[Stress Test] Closeup Compare"
 1171, "压力测试任务，测试主力舰近距对战。"
@@ -2424,7 +2425,7 @@ $y 塔纳布是$y 佩勒米亚贸易航路上的农业枢纽，也是那些靠�
 1917, "我们还没搜完空间站呢，珍珠号。保持距离。"
 1918, "我们没有时间干等着，红队长。快点！"
 1919, "$RightSubsysString"
-1920, "Time: $BoardingCountDown"
+1920, "时间：$BoardingCountDown"
 1921, "红2，你疯了吗？"
 1922, "我探测到更多战斗机从行星表面起飞。这里越来越挤了。"
 1923, "一艘卡拉级巡洋舰刚跳入……我有种不祥的预感。"
